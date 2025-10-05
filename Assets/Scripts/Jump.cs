@@ -6,6 +6,7 @@ public class Jump : MonoBehaviour
     public string downKey = "down";
     public string leftKey = "left";
     public string rightKey = "right";
+    public AudioClip jumpSound;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,6 +21,7 @@ public class Jump : MonoBehaviour
         if (Input.GetKey("up"))
         {
             transform.Translate(0, 7f * Time.deltaTime, 0);
+            AudioSource.PlayClipAtPoint(jumpSound, transform.position);
         }
         else if (Input.GetKey("down"))
         {
