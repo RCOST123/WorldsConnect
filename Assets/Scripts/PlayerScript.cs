@@ -5,8 +5,8 @@ public class PlayerController : MonoBehaviour
     [Header("Movement Settings")]
     public float moveSpeed = 5f;
     public float jumpForce = 10f;
-    //private float player_y = 0f;
-    //private float updatedplayer_y = 0f;
+    private float player_y = 0f;
+    private float updatedplayer_y = 0f;
     public string upKey = "up";
      public string leftKey = "left";
     public string rightKey = "right";
@@ -40,7 +40,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         ///FIX THIS
-        //player_y = player.position.y;
+        //float player_y;
+        //player_y = transform.position.y;
         //Debug.Log($"Player y position: {player_y}");
         // Horizontal movement
         if (Input.GetKey("left"))
@@ -51,6 +52,7 @@ public class PlayerController : MonoBehaviour
         {
             transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
         }
+
         //float moveInput = Input.GetAxis("Horizontal");
         //rb.linearVelocity = new Vector2(moveInput * moveSpeed * Time.deltaTime, rb.linearVelocity.y);
 
@@ -98,18 +100,30 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    ///void OnCollisionEnter2D(Collision2D collision)
-    //{
-       /// if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Platform"))
-        //{
-           ///NEED TO FIX THIS
-           ///  isGrounded = true;
-           /// updatedplayer_y = player.position.y;
-            ///if (updatedplayer_y - player_y < -2f)
-            ///{
-             ///   LoseHeart();
-            ///}
-        ///else
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+       if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Platform"))
+        {
+            ///NEED TO FIX THIS
+            ///  isGrounded = true;
+            //float player_y;
+            //float updatedplayer_y;
+            player_y = transform.position.y;
+            Debug.Log($"Player y position: {player_y}");
+            //if (player_y < 0f && updatedplayer_y < 0f)
+           // {
+             //   break;
+           // }
+            if (player_y < 0f && updatedplayer_y > 0f)
+            {
+                if (updatedplayer_y + player_y < -2f)
+                {
+                    LoseHeart();
+                }
+            } 
+            updatedplayer_y = transform.position.y;
+            Debug.Log($"Updated Player y position: {updatedplayer_y}");
+         ///else
            // {
              //   isGrounded = false;
             //}
@@ -125,8 +139,8 @@ public class PlayerController : MonoBehaviour
             //break;
             //}
             //}
-       // }
-   //}
+       }
+   }
 
     //void OnCollisionExit2D(Collision2D collision)
     //{
