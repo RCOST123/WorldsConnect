@@ -4,184 +4,412 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Movement Settings")]
     public float moveSpeed = 5f;
-    public float jumpForce = 10f;
-    private float player_y = 0f;
-    private float updatedplayer_y = 0f;
-    public string upKey = "up";
-     public string leftKey = "left";
-    public string rightKey = "right";
+    public float jumpForce = 12f;
+    public float dashForce = 15f;
+    public float wallJumpHorizontalPush = 5f;
+
+    [Header("Fall Damage Settings")]
+    public float fallDamageThreshold = 15f;
+
+    [Header("Wall Settings")]
+    public float wallGrabDuration = 0.2f;
+    [Tooltip("Slide gravity = initialGravityScale * wallSlideGravity")]
+    public float wallSlideGravity = 0.5f;
+
+    [Header("Dash Settings")]
+    public float dashDuration = 0.2f;
 
     [Header("Player Health")]
-    public int maxHearts = 5;
-    int currentHearts;
-    public GameObject heart1;
-    public GameObject heart2;
-    public GameObject heart3;
-    public GameObject heart4;
-    public GameObject heart5;
-    public GameObject player;
+    public int maxHearts = 3;
+    private int currentHearts;
 
-    [Header("Sounds")]
-    public AudioClip jumpSound;
+    [Header("Collectables")]
+    private int keysCollected = 0;
 
-    //Rigidbody2D rb;
-    bool isGrounded;
-    
+    [Header("Respawn Settings")]
+    private Vector3 lastPlatformPosition;
+    private bool hasValidRespawnPoint;
+
+    // Components
+    private Rigidbody2D rb;
+    private float initialGravityScale;
+
+    // Ground detection
+    private bool isGrounded;
+    private float lastYVelocity;
+
+    // Wall detection
+    private bool isTouchingWall;
+    private int wallDirection; // -1 = left wall, +1 = right wall
+
+    // Wall grab state
+    private bool isWallGrabbing;
+    private float wallGrabTimer;
+
     // Skills
-    bool hasExtraJump;
-    bool extraJumpAvailable;
+    private bool hasExtraJump;
+    private bool extraJumpAvailable;
+    private bool hasDash;
+    private bool canDash;
+    private bool hasClaws;
+
+    // Dash state
+    private bool isDashing;
+    private float dashEndTime;
+
+    // Movement control
+    private float facingDirection = 1f;
+    private bool wallJumpActive;
+    private float wallJumpEndTime;
 
     void Start()
     {
-        //rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
+
+        initialGravityScale = rb.gravityScale;
         currentHearts = maxHearts;
+        keysCollected = 0;
     }
 
     void Update()
     {
-        ///FIX THIS
-        //float player_y;
-        //player_y = transform.position.y;
-        //Debug.Log($"Player y position: {player_y}");
-        // Horizontal movement
-        if (Input.GetKey("left"))
+        if (rb == null) return;
+
+
+        // Get vertical velocity for impact
+        lastYVelocity = rb.linearVelocity.y;
+
+        // If we're currently dashing, check end and skip normal control while dashing
+        if (isDashing)
         {
-            transform.Translate(-moveSpeed * Time.deltaTime, 0, 0);
-        }
-        else if (Input.GetKey("right"))
-        {
-            transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
+            if (Time.time >= dashEndTime)
+                EndDash();
+            return;
         }
 
-        //float moveInput = Input.GetAxis("Horizontal");
-        //rb.linearVelocity = new Vector2(moveInput * moveSpeed * Time.deltaTime, rb.linearVelocity.y);
+        // If wall jump is active, wait for it to finish before allowing input control
+        if (wallJumpActive)
+        {
+            if (Time.time >= wallJumpEndTime)
+                wallJumpActive = false;
+            else
+                return; 
+        }
+
+        float moveInput = Input.GetAxisRaw("Horizontal");
+
+        // Update facing direction
+        if (moveInput != 0f)
+            facingDirection = Mathf.Sign(moveInput);
+
+        // If touching a wall and player is pressing away from it, release the wall
+        if (isTouchingWall)
+        {
+            bool movingAway = (wallDirection == 1 && moveInput < 0f) || (wallDirection == -1 && moveInput > 0f);
+            if (movingAway)
+            {
+                isTouchingWall = false;
+                StopWallGrab();
+            }
+        }
+
+        // If touching a wall, ignore input
+        if (isTouchingWall)
+        {
+            bool pressingIntoWall = (wallDirection == 1 && moveInput > 0f) || (wallDirection == -1 && moveInput < 0f);
+            if (pressingIntoWall)
+                moveInput = 0f;
+        }
+
+        // Normal horizontal movement
+        if (!isWallGrabbing)
+        {
+            rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
+        }
 
         // Jumping
-        if (Input.GetKey("up"))
+        if (Input.GetButtonDown("Jump"))
         {
-            Jump();
-            //if (isGrounded)
-            // {
-            // Jump();
-            //} deleted else on next line
-            if (hasExtraJump && extraJumpAvailable)
+            if (isGrounded)
             {
                 Jump();
+            }
+            else if (isWallGrabbing || (hasClaws && isTouchingWall))
+            {
+                if (hasClaws && isTouchingWall)
+                    WallJump();
+            }
+            else if (hasExtraJump && extraJumpAvailable)
+            {
                 Jump();
-                //extraJumpAvailable = false;
+                extraJumpAvailable = false;
+            }
+        }
+
+        // Dash
+        if (Input.GetKeyDown(KeyCode.LeftShift) && hasDash && !isDashing)
+        {
+            float dashDir = (Mathf.Approximately(moveInput, 0f)) ? facingDirection : Mathf.Sign(moveInput);
+            StartDash(dashDir);
+        }
+
+        // Handle wall grabbing / sliding
+        HandleWallGrab();
+    }
+
+    private void HandleWallGrab()
+    {
+        // Conditions to start/maintain wall grab - have claws, touching wall, not grounded, not dashing
+        if (!hasClaws || !isTouchingWall || isGrounded || isDashing)
+        {
+            if (isWallGrabbing)
+                StopWallGrab();
+            return;
+        }
+
+        // Start grabbing if not already
+        if (!isWallGrabbing)
+        {
+            isWallGrabbing = true;
+            wallGrabTimer = wallGrabDuration;
+
+            // Stick to wall
+            rb.linearVelocity = Vector2.zero;
+            rb.gravityScale = 0f;
+
+            // Reset extra jump
+            extraJumpAvailable = true;
+        }
+
+        // If still grabbing, count
+        if (isWallGrabbing)
+        {
+            wallGrabTimer -= Time.deltaTime;
+
+            if (wallGrabTimer <= 0f)
+            {
+                // Start sliding - reduced gravity
+                rb.gravityScale = initialGravityScale * wallSlideGravity;
+            }
+            else
+            {
+                rb.linearVelocity = Vector2.zero;
             }
         }
     }
 
-    void Jump()
+    void OnTriggerEnter2D(Collider2D other)
     {
-        transform.Translate(0, jumpForce * Time.deltaTime, 0);
-        AudioSource.PlayClipAtPoint(jumpSound, transform.position);
-        //rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce * Time.deltaTime);
+        // Key collection
+        if (other.CompareTag("Key"))
+        {
+            keysCollected++;
+            Debug.Log("Key collected! Total keys: " + keysCollected);
+            Destroy(other.gameObject);
+        }
     }
 
-    // Called from SkillPickup when a skill is collected
+    // Keycount
+    public int GetKeyCount()
+    {
+        return keysCollected;
+    }
+
+    // Gethearts
+    public int GetCurrentHearts()
+    {
+        return currentHearts;
+    }
+
+    // Method to reset keys (useful for level restart)
+    public void ResetKeys()
+    {
+        keysCollected = 0;
+    }
+
+    private void StopWallGrab()
+    {
+        isWallGrabbing = false;
+        rb.gravityScale = initialGravityScale;
+    }
+
+    private void Jump()
+    {
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+        isGrounded = false;
+    }
+
+    private void WallJump()
+    {
+        // If wall is on right (wallDirection = 1), push left (negative)
+        // If wall is on left (wallDirection = -1), push right (positive)
+        float pushDirection = -wallDirection;
+        rb.linearVelocity = new Vector2(pushDirection * wallJumpHorizontalPush, jumpForce);
+
+        // Reset wall states
+        isWallGrabbing = false;
+        isTouchingWall = false;
+
+        // Restore gravity
+        rb.gravityScale = initialGravityScale;
+
+        // Give a jump reset
+        extraJumpAvailable = true;
+        isGrounded = false;
+
+        wallJumpActive = true;
+        wallJumpEndTime = Time.time + 0.15f;
+    }
+
+    private void StartDash(float dirSign)
+    {
+        isDashing = true;
+        dashEndTime = Time.time + dashDuration;
+
+        // Remove gravity for a clean horizontal dash
+        rb.gravityScale = 0f;
+        rb.linearVelocity = new Vector2(dirSign * dashForce, 0f);
+    }
+
+    private void EndDash()
+    {
+        isDashing = false;
+        rb.gravityScale = initialGravityScale;
+    }
+
     public void UnlockSkill(SkillType skill)
     {
         switch (skill)
         {
             case SkillType.Wings:
                 hasExtraJump = true;
-                Debug.Log("Wings acquired — double jump unlocked.");
+                extraJumpAvailable = true;
                 break;
-
             case SkillType.Claws:
-                Debug.Log("Claws acquired — wall climbing coming soon.");
+                hasClaws = true;
                 break;
-
             case SkillType.Dash:
-                Debug.Log("Dash acquired — speed boost coming soon.");
+                hasDash = true;
                 break;
         }
+        Debug.Log(skill + " unlocked!");
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-       if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Platform"))
+        // Handle ground/platform contacts
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Platform"))
         {
-            ///NEED TO FIX THIS
-            ///  isGrounded = true;
-            //float player_y;
-            //float updatedplayer_y;
-            player_y = transform.position.y;
-            Debug.Log($"Player y position: {player_y}");
-            //if (player_y < 0f && updatedplayer_y < 0f)
-            // {
-            //   break;
-            // }
-            if (player_y < 0f && updatedplayer_y > 0f)
+            foreach (var contact in collision.contacts)
             {
-                if (updatedplayer_y + player_y < -2f)
+                if (contact.normal.y > 0.5f)
                 {
-                    LoseHeart();
+                    // Fall damage check
+                    float impactSpeed = Mathf.Abs(lastYVelocity);
+                    if (!isGrounded && impactSpeed > fallDamageThreshold)
+                    {
+                        TakeDamage(1);
+                        Debug.Log("Impact speed: " + impactSpeed.ToString("F1"));
+                    }
+
+                    isGrounded = true;
+                    extraJumpAvailable = true;
+
+                    // Store platform position as respawn point
+                    if (collision.gameObject.CompareTag("Platform"))
+                    {
+                        lastPlatformPosition = transform.position;
+                        hasValidRespawnPoint = true;
+                        Debug.Log("Respawn point saved at: " + lastPlatformPosition);
+                    }
+
+                    // Restore gravity
+                    rb.gravityScale = initialGravityScale;
+                    break;
                 }
-            } 
-            else if (player_y > 0f && updatedplayer_y > 0f)
+            }
+        }
+
+        // Handle wall contacts
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            isTouchingWall = true;
+
+            if (collision.contacts.Length > 0)
             {
-                if (updatedplayer_y - player_y < -2f)
-                {
-                    LoseHeart();
-                }
-            } 
-            updatedplayer_y = transform.position.y;
-            Debug.Log($"Updated Player y position: {updatedplayer_y}");
-         ///else
-           // {
-             //   isGrounded = false;
-            //}
-            //foreach (var contact in collision.contacts)
-            //{
-            //Debug.Log($"contact normal is {contact.normal.y}");
-            //if (contact.normal.y > 1f)
-            //{
-            //if (collision.gameObject.CompareTag("Ground") && !isGrounded)
-            //LoseHeart();
-            //isGrounded = true;
-            //extraJumpAvailable = true;
-            //break;
-            //}
-            //}
-       }
-   }
+                var n = collision.contacts[0].normal.x;
+                // If normal.x > 0 -> wall is to the left, set wallDirection = -1
+                wallDirection = (n > 0f) ? -1 : 1;
+            }
+        }
+    }
 
-    //void OnCollisionExit2D(Collision2D collision)
-    //{
-      //  if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Platform"))
-        //    isGrounded = true;
-            ///made change here
-    //}
-
-    void LoseHeart()
+    void OnCollisionExit2D(Collision2D collision)
     {
-        currentHearts = currentHearts - 1;
-        if (currentHearts == 4)
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Platform"))
         {
-            Destroy(heart5);
+            isGrounded = false;
         }
-        else if (currentHearts == 3)
-        {
-            Destroy(heart4);
-        }
-        else if (currentHearts == 2)
-        {
-            Destroy(heart3);
-        }
-        else if (currentHearts == 1)
-        {
-            Destroy(heart2);
-        }
-        else if (currentHearts == 0)
-        {
-            Destroy(heart1);
-            Destroy(player);
-            Debug.Log("Player is out of hearts — Game Over.");
-        }
-        Debug.Log($"Player landed — hearts left: {currentHearts}");
 
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            isTouchingWall = false;
+            StopWallGrab();
+        }
+    }
+
+    // all dmg triggers
+    public void TakeDamage(int amount)
+    {
+
+        currentHearts -= amount;
+        currentHearts = Mathf.Max(currentHearts, 0);
+        Debug.Log("Damage taken! Hearts left: " + currentHearts);
+
+        if (currentHearts <= 0)
+        {
+            Die();
+        }
+        else
+        {
+            // Respawn at last platform
+            RespawnAtLastPlatform();
+        }
+    }
+
+    private void RespawnAtLastPlatform()
+    {
+        if (hasValidRespawnPoint)
+        {
+            // Teleport to last platform position
+            transform.position = lastPlatformPosition;
+            
+            // Reset velocity
+            rb.linearVelocity = Vector2.zero;
+            
+            // Reset states
+            isGrounded = false;
+            isTouchingWall = false;
+            isWallGrabbing = false;
+            isDashing = false;
+            wallJumpActive = false;
+            
+            // Restore gravity
+            rb.gravityScale = initialGravityScale;
+            
+        }
+    }
+
+    private void Die()
+    {
+        Debug.Log("Game Over!");
+        // Add death logic here (reload scene, show game over screen, etc.)
+    }
+
+    private void LoseHeart(int amount)
+    {
+        currentHearts -= amount;
+        currentHearts = Mathf.Max(currentHearts, 0);
+        Debug.Log("Hearts left: " + currentHearts);
     }
 }
