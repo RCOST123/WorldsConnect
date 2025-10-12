@@ -111,12 +111,19 @@ public class PlayerController : MonoBehaviour
             player_y = transform.position.y;
             Debug.Log($"Player y position: {player_y}");
             //if (player_y < 0f && updatedplayer_y < 0f)
-           // {
-             //   break;
-           // }
+            // {
+            //   break;
+            // }
             if (player_y < 0f && updatedplayer_y > 0f)
             {
                 if (updatedplayer_y + player_y < -2f)
+                {
+                    LoseHeart();
+                }
+            } 
+            else if (player_y > 0f && updatedplayer_y > 0f)
+            {
+                if (updatedplayer_y - player_y < -2f)
                 {
                     LoseHeart();
                 }
