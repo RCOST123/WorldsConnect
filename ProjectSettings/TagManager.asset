@@ -9,6 +9,9 @@ TagManager:
   - Ground
   - Platform
   - Door
+  - Skills
+  - Wall
+  - Key
   layers:
   - Default
   - TransparentFX
