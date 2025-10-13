@@ -329,6 +329,10 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+        else if (collision.gameObject.CompareTag("Enemy"))
+        {
+            TakeDamage(1);
+        }
 
         // Handle wall contacts
         if (collision.gameObject.CompareTag("Wall"))

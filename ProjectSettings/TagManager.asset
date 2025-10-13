@@ -9,8 +9,8 @@ TagManager:
   - Ground
   - Platform
   - Door
-  - Skills
   - Wall
+  - Skills
   - Key
   layers:
   - Default

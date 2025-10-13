@@ -15,7 +15,6 @@ public class SkillPickup : MonoBehaviour
         playerInRange = true;
         playerController = other.GetComponent<PlayerController>();
 
-        Debug.Log("In Range of " + skillType);
         UIManager.Instance.ShowPickupPrompt("Press W to pick up " + skillType, transform);
     }
 
