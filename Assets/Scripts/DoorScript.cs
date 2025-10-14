@@ -5,10 +5,12 @@ public class DoorController : MonoBehaviour
     public int keysRequired = 3;
     private PlayerController player;
     private bool doorUnlocked = false;
+    public GameObject unlocked_door;
 
     void Start()
     {
         player = FindFirstObjectByType<PlayerController>();
+       unlocked_door.SetActive(false);
     }
 
     void Update()
@@ -24,6 +26,7 @@ public class DoorController : MonoBehaviour
         doorUnlocked = true;
         Debug.Log("Door unlocked!");
         // Animate door, disable collider, load next scene, etc.
+        unlocked_door.SetActive(true);
         Destroy(gameObject); // Or disable the door collider
     }
 }

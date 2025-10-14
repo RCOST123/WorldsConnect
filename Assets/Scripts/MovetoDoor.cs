@@ -1,10 +1,9 @@
 using UnityEngine;
 
-public class DoorScript : MonoBehaviour
+public class MovetoDoorScript : MonoBehaviour
 {
     public GameObject nextdoor;
     public Vector3 doorpos;
-    
     ///public bool door_on = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

@@ -407,6 +407,7 @@ public class PlayerController : MonoBehaviour
     private void Die()
     {
         Debug.Log("Game Over!");
+        Destroy(gameObject);
         // Add death logic here (reload scene, show game over screen, etc.)
     }
 
