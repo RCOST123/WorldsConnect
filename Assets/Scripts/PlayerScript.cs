@@ -33,6 +33,8 @@ public class PlayerController : MonoBehaviour
     // Components
     private Rigidbody2D rb;
     private float initialGravityScale;
+    /// Co-pilot wrote the next line
+    public CameraFollow cameraFollow;
 
     // Ground detection
     private bool isGrounded;
@@ -372,6 +374,8 @@ public class PlayerController : MonoBehaviour
 
         if (currentHearts <= 0)
         {
+           ///Co-pilot wrote the next line
+           cameraFollow.UpdateHeartDisplay();
             Die();
         }
         else

@@ -89,7 +89,7 @@ public class CameraFollow : MonoBehaviour
         lastHeartCount = maxHearts;
     }
 
-    void UpdateHeartDisplay()
+    public void UpdateHeartDisplay()
     {
         if (playerController == null || heartObjects == null) return;
 
@@ -114,7 +114,9 @@ public class CameraFollow : MonoBehaviour
             foreach (GameObject heart in heartObjects)
             {
                 if (heart != null)
+                {
                     Destroy(heart);
+                }
             }
         }
 
