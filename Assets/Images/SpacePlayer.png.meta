@@ -1,0 +1,3894 @@
+fileFormatVersion: 2
+guid: 8c41f0594a2d743d8bb52562e6f79fd8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6498672735498691982
+    second: SpacePlayer_0
+  - first:
+      213: -881434452998160128
+    second: SpacePlayer_1
+  - first:
+      213: 6231306993674691605
+    second: SpacePlayer_2
+  - first:
+      213: -2461756324289164998
+    second: SpacePlayer_3
+  - first:
+      213: 2153077321659588860
+    second: SpacePlayer_4
+  - first:
+      213: -486555342507154926
+    second: SpacePlayer_5
+  - first:
+      213: -339576769390992853
+    second: SpacePlayer_6
+  - first:
+      213: 1741769410060639486
+    second: SpacePlayer_7
+  - first:
+      213: 3950317686347909559
+    second: SpacePlayer_8
+  - first:
+      213: -219856691276389678
+    second: SpacePlayer_9
+  - first:
+      213: -7021866136356869258
+    second: SpacePlayer_10
+  - first:
+      213: -3592557034251011363
+    second: SpacePlayer_11
+  - first:
+      213: -2839324692327062294
+    second: SpacePlayer_12
+  - first:
+      213: 3798937160896827093
+    second: SpacePlayer_13
+  - first:
+      213: -2100404194934913743
+    second: SpacePlayer_14
+  - first:
+      213: -5230486732222703623
+    second: SpacePlayer_15
+  - first:
+      213: -5691004695505068769
+    second: SpacePlayer_16
+  - first:
+      213: -4868763178037141539
+    second: SpacePlayer_17
+  - first:
+      213: 8836699069664070569
+    second: SpacePlayer_18
+  - first:
+      213: 8310253905419350488
+    second: SpacePlayer_19
+  - first:
+      213: -3379220833123697293
+    second: SpacePlayer_20
+  - first:
+      213: 612152155363531665
+    second: SpacePlayer_21
+  - first:
+      213: 1366152448863769819
+    second: SpacePlayer_22
+  - first:
+      213: -852953379351389417
+    second: SpacePlayer_23
+  - first:
+      213: 211392337820244579
+    second: SpacePlayer_24
+  - first:
+      213: -9132151249542811891
+    second: SpacePlayer_25
+  - first:
+      213: -600537678139917730
+    second: SpacePlayer_26
+  - first:
+      213: 7289708200239066317
+    second: SpacePlayer_27
+  - first:
+      213: -6757532077654194973
+    second: SpacePlayer_28
+  - first:
+      213: -3146320975590240953
+    second: SpacePlayer_29
+  - first:
+      213: 1649459389729263209
+    second: SpacePlayer_30
+  - first:
+      213: -8537989021813463490
+    second: SpacePlayer_31
+  - first:
+      213: 7345494970485119466
+    second: SpacePlayer_32
+  - first:
+      213: -8058533662933161937
+    second: SpacePlayer_33
+  - first:
+      213: 1368648301272130685
+    second: SpacePlayer_34
+  - first:
+      213: -6372235132800733385
+    second: SpacePlayer_35
+  - first:
+      213: -1368385859205168002
+    second: SpacePlayer_36
+  - first:
+      213: 8698018622335826821
+    second: SpacePlayer_37
+  - first:
+      213: 5108391710704401854
+    second: SpacePlayer_38
+  - first:
+      213: 2093660952333508496
+    second: SpacePlayer_39
+  - first:
+      213: 9199010078582735742
+    second: SpacePlayer_40
+  - first:
+      213: -9086948944109521892
+    second: SpacePlayer_41
+  - first:
+      213: 7433491211460014696
+    second: SpacePlayer_42
+  - first:
+      213: 1979034354929378970
+    second: SpacePlayer_43
+  - first:
+      213: -2961215304037517996
+    second: SpacePlayer_44
+  - first:
+      213: -8861593736478001920
+    second: SpacePlayer_45
+  - first:
+      213: 1332055697327722616
+    second: SpacePlayer_46
+  - first:
+      213: -761585745859711306
+    second: SpacePlayer_47
+  - first:
+      213: -8798188305322944187
+    second: SpacePlayer_48
+  - first:
+      213: -5015725363490360310
+    second: SpacePlayer_49
+  - first:
+      213: -8561130158854776820
+    second: SpacePlayer_50
+  - first:
+      213: -2584694163240230053
+    second: SpacePlayer_51
+  - first:
+      213: 3790549547453271811
+    second: SpacePlayer_52
+  - first:
+      213: 1911923023504981212
+    second: SpacePlayer_53
+  - first:
+      213: -8274145439020726613
+    second: SpacePlayer_54
+  - first:
+      213: -6851605694296989623
+    second: SpacePlayer_55
+  - first:
+      213: 3790379203008726595
+    second: SpacePlayer_56
+  - first:
+      213: -7802416320873894289
+    second: SpacePlayer_57
+  - first:
+      213: 5395105881613119062
+    second: SpacePlayer_58
+  - first:
+      213: 1937462447717987375
+    second: SpacePlayer_59
+  - first:
+      213: 413782649680633830
+    second: SpacePlayer_60
+  - first:
+      213: -95806628110056691
+    second: SpacePlayer_61
+  - first:
+      213: 7164259942026443923
+    second: SpacePlayer_62
+  - first:
+      213: -3482007924523924912
+    second: SpacePlayer_63
+  - first:
+      213: 2683865616239598942
+    second: SpacePlayer_64
+  - first:
+      213: -687733266906358498
+    second: SpacePlayer_65
+  - first:
+      213: -1589350493897574004
+    second: SpacePlayer_66
+  - first:
+      213: 6257499684543488141
+    second: SpacePlayer_67
+  - first:
+      213: 1941364085784649733
+    second: SpacePlayer_68
+  - first:
+      213: -3361012060842268252
+    second: SpacePlayer_69
+  - first:
+      213: 6727268775791918630
+    second: SpacePlayer_70
+  - first:
+      213: 4010777334010183553
+    second: SpacePlayer_71
+  - first:
+      213: -194522745322219592
+    second: SpacePlayer_72
+  - first:
+      213: -6487483397371072914
+    second: SpacePlayer_73
+  - first:
+      213: -4065980705036437966
+    second: SpacePlayer_74
+  - first:
+      213: -1141923874388073865
+    second: SpacePlayer_75
+  - first:
+      213: 5896732040687299115
+    second: SpacePlayer_76
+  - first:
+      213: 528786919325290188
+    second: SpacePlayer_77
+  - first:
+      213: 5843778389836719031
+    second: SpacePlayer_78
+  - first:
+      213: 1481172059464527967
+    second: SpacePlayer_79
+  - first:
+      213: -9114634913939374840
+    second: SpacePlayer_80
+  - first:
+      213: 5325064857272550503
+    second: SpacePlayer_81
+  - first:
+      213: 6887275602584396269
+    second: SpacePlayer_82
+  - first:
+      213: 2899954336039674288
+    second: SpacePlayer_83
+  - first:
+      213: 2238962521805999416
+    second: SpacePlayer_84
+  - first:
+      213: -3997784011727336870
+    second: SpacePlayer_85
+  - first:
+      213: -2299696357994134603
+    second: SpacePlayer_86
+  - first:
+      213: 8762707225031638979
+    second: SpacePlayer_87
+  - first:
+      213: -3094133192812416228
+    second: SpacePlayer_88
+  - first:
+      213: -4489057148912121901
+    second: SpacePlayer_89
+  - first:
+      213: 3263119242774912362
+    second: SpacePlayer_90
+  - first:
+      213: -2675561915054197069
+    second: SpacePlayer_91
+  - first:
+      213: 1597713864262149495
+    second: SpacePlayer_92
+  - first:
+      213: -1025520819879913062
+    second: SpacePlayer_93
+  - first:
+      213: 7048501524550890610
+    second: SpacePlayer_94
+  - first:
+      213: 6024459724940758150
+    second: SpacePlayer_95
+  - first:
+      213: 582843766612376070
+    second: SpacePlayer_96
+  - first:
+      213: -2692407056188110837
+    second: SpacePlayer_97
+  - first:
+      213: -941961405232238088
+    second: SpacePlayer_98
+  - first:
+      213: 8268395989784628766
+    second: SpacePlayer_99
+  - first:
+      213: 2281432398977685093
+    second: SpacePlayer_100
+  - first:
+      213: 8077682844538814095
+    second: SpacePlayer_101
+  - first:
+      213: -7033547889726863787
+    second: SpacePlayer_102
+  - first:
+      213: 7579357788537833802
+    second: SpacePlayer_103
+  - first:
+      213: -609054577891578798
+    second: SpacePlayer_104
+  - first:
+      213: 4084780273862012418
+    second: SpacePlayer_105
+  - first:
+      213: -8509764378345318144
+    second: SpacePlayer_106
+  - first:
+      213: 4950660914091831446
+    second: SpacePlayer_107
+  - first:
+      213: -3957263678916312786
+    second: SpacePlayer_108
+  - first:
+      213: -574049808024907010
+    second: SpacePlayer_109
+  - first:
+      213: -3021410515330480671
+    second: SpacePlayer_110
+  - first:
+      213: -5737311526103271334
+    second: SpacePlayer_111
+  - first:
+      213: 6255871655207986476
+    second: SpacePlayer_112
+  - first:
+      213: -5650892520826450870
+    second: SpacePlayer_113
+  - first:
+      213: -6893072272471245205
+    second: SpacePlayer_114
+  - first:
+      213: -1085982994490391292
+    second: SpacePlayer_115
+  - first:
+      213: -8518776753849509777
+    second: SpacePlayer_116
+  - first:
+      213: 9121302574005123142
+    second: SpacePlayer_117
+  - first:
+      213: 1925301560909833083
+    second: SpacePlayer_118
+  - first:
+      213: -469897119967186964
+    second: SpacePlayer_119
+  - first:
+      213: -9111067061998797117
+    second: SpacePlayer_120
+  - first:
+      213: 7868737827234028056
+    second: SpacePlayer_121
+  - first:
+      213: -5349583754524449022
+    second: SpacePlayer_122
+  - first:
+      213: 5817097951446628035
+    second: SpacePlayer_123
+  - first:
+      213: 1779143152407398110
+    second: SpacePlayer_124
+  - first:
+      213: -4096876873623478440
+    second: SpacePlayer_125
+  - first:
+      213: -4166640994596954910
+    second: SpacePlayer_126
+  - first:
+      213: -4060822206067161995
+    second: SpacePlayer_127
+  - first:
+      213: 2631284911112161197
+    second: SpacePlayer_128
+  - first:
+      213: -7346725008862939246
+    second: SpacePlayer_129
+  - first:
+      213: -7126934700840424563
+    second: SpacePlayer_130
+  - first:
+      213: 3728687724389761957
+    second: SpacePlayer_131
+  - first:
+      213: -2560333186125116191
+    second: SpacePlayer_132
+  - first:
+      213: 6023819450498760656
+    second: SpacePlayer_133
+  - first:
+      213: -5209032096777985144
+    second: SpacePlayer_134
+  - first:
+      213: 6272231191461485121
+    second: SpacePlayer_135
+  - first:
+      213: 4914680591881159993
+    second: SpacePlayer_136
+  - first:
+      213: -700434701758156606
+    second: SpacePlayer_137
+  - first:
+      213: 4942230338624780915
+    second: SpacePlayer_138
+  - first:
+      213: -5244937251569258922
+    second: SpacePlayer_139
+  - first:
+      213: 5380738506074063497
+    second: SpacePlayer_140
+  - first:
+      213: 6735954575142903187
+    second: SpacePlayer_141
+  - first:
+      213: 6509933101261893148
+    second: SpacePlayer_142
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SpacePlayer_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 701
+        width: 211
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e856ae6eb6cef2a50800000000000000
+      internalID: 6498672735498691982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_1
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 707
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0010148f80484c3f0800000000000000
+      internalID: -881434452998160128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 690
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 514236422bc0a7650800000000000000
+      internalID: 6231306993674691605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_3
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 697
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a394c2f7aa516ddd0800000000000000
+      internalID: -2461756324289164998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 682
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf02873aa6441ed10800000000000000
+      internalID: 2153077321659588860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 667
+        width: 26
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 212ea4e6e786f39f0800000000000000
+      internalID: -486555342507154926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_6
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 626
+        width: 17
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b22a9763ab4994bf0800000000000000
+      internalID: -339576769390992853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 667
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efc5e47dc020c2810800000000000000
+      internalID: 1741769410060639486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 634
+        width: 18
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b9c5bc810952d630800000000000000
+      internalID: 3950317686347909559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_9
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 671
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d26afe0189e2fcf0800000000000000
+      internalID: -219856691276389678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_10
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 655
+        width: 34
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67baa12d3f15d8e90800000000000000
+      internalID: -7021866136356869258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_11
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 649
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dda332a596ca42ec0800000000000000
+      internalID: -3592557034251011363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_12
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 646
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae4a9d75c31b898d0800000000000000
+      internalID: -2839324692327062294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_13
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 652
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5de494f583988b430800000000000000
+      internalID: 3798937160896827093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 441
+        width: 40
+        height: 145
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1350a2c538dd9d2e0800000000000000
+      internalID: -2100404194934913743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_15
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 423
+        width: 86
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f7d87387049967b0800000000000000
+      internalID: -5230486732222703623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_16
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 435
+        width: 66
+        height: 119
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1d1755b16d7501b0800000000000000
+      internalID: -5691004695505068769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_17
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 375
+        width: 76
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddf18957fadae6cb0800000000000000
+      internalID: -4868763178037141539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_18
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 467
+        width: 6
+        height: 105
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ab0a5a2cf242aa70800000000000000
+      internalID: 8836699069664070569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_19
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 425
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d1b2d9b5e3f35370800000000000000
+      internalID: 8310253905419350488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_20
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 114
+        width: 155
+        height: 233
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37dff006e889a11d0800000000000000
+      internalID: -3379220833123697293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_21
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 402
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19bdee8542dce7800800000000000000
+      internalID: 612152155363531665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_22
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 360
+        width: 33
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd41e8ff96c85f210800000000000000
+      internalID: 1366152448863769819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_23
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 409
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71b9acdab63b924f0800000000000000
+      internalID: -852953379351389417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_24
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 407
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36ad30416340fe200800000000000000
+      internalID: 211392337820244579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_25
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 390
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0f6cdf92d4144180800000000000000
+      internalID: -9132151249542811891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_26
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 147
+        width: 213
+        height: 203
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5a7b3cd9267aa7f0800000000000000
+      internalID: -600537678139917730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_27
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 280
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcc608f4cfe3a2560800000000000000
+      internalID: 7289708200239066317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_28
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 329
+        width: 111
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e44d19d06c6832a0800000000000000
+      internalID: -6757532077654194973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_29
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 280
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74d459c1eb50654d0800000000000000
+      internalID: -3146320975590240953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_30
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 286
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96ece34639e04e610800000000000000
+      internalID: 1649459389729263209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_31
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 300
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e36af9a8838f28980800000000000000
+      internalID: -8537989021813463490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_32
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 294
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae91f2fe1c070f560800000000000000
+      internalID: 7345494970485119466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_33
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 272
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f28675a54565a2090800000000000000
+      internalID: -8058533662933161937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_34
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 292
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7464cbe06a6ef210800000000000000
+      internalID: 1368648301272130685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_35
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 282
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73fe52488e54197a0800000000000000
+      internalID: -6372235132800733385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_36
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 300
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e748862af44820de0800000000000000
+      internalID: -1368385859205168002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_37
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 292
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58b3f0a5ad195b870800000000000000
+      internalID: 8698018622335826821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_38
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 282
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebdf51a0237a4e640800000000000000
+      internalID: 5108391710704401854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_39
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 300
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09fd1ff1b8d2e0d10800000000000000
+      internalID: 2093660952333508496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_40
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 310
+        width: 11
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7389239de279af70800000000000000
+      internalID: 9199010078582735742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_41
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 328
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c14bd3e741ca4e180800000000000000
+      internalID: -9086948944109521892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_42
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 282
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 862ff0c5fd0192760800000000000000
+      internalID: 7433491211460014696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_43
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 287
+        width: 68
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a962cdba241f67b10800000000000000
+      internalID: 1979034354929378970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_44
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 338
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 455b463ce56a7e6d0800000000000000
+      internalID: -2961215304037517996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_45
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 332
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 005f669827b450580800000000000000
+      internalID: -8861593736478001920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_46
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 320
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 870114469996c7210800000000000000
+      internalID: 1332055697327722616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_47
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 344
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bee7089ccd4e65f0800000000000000
+      internalID: -761585745859711306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_48
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 330
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 549da32e95e86e580800000000000000
+      internalID: -8798188305322944187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_49
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 348
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a047d3a3b50946ab0800000000000000
+      internalID: -5015725363490360310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_50
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 376
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c08d395ba71c03980800000000000000
+      internalID: -8561130158854776820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_51
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 348
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b536a035a52512cd0800000000000000
+      internalID: -2584694163240230053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_52
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 141
+        width: 89
+        height: 181
+      alignment: 9
+      pivot: {x: 0.47143555, y: 0.56147134}
+      border: {x: 5, y: 16, z: 7, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30f487feabcba9430800000000000000
+      internalID: 3790549547453271811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_53
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 320
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdcb7ed2cd3888a10800000000000000
+      internalID: 1911923023504981212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_54
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 312
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba6404fbf845c2d80800000000000000
+      internalID: -8274145439020726613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_55
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 317
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94062622ce43ae0a0800000000000000
+      internalID: -6851605694296989623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_56
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 316
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3460d578dc12a9430800000000000000
+      internalID: 3790379203008726595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_57
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 294
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6ee994f1bf38b390800000000000000
+      internalID: -7802416320873894289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_58
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 321
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65eab2ff6344fda40800000000000000
+      internalID: 5395105881613119062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_59
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 310
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f24b3e1c4df33ea10800000000000000
+      internalID: 1937462447717987375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_60
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 174
+        width: 41
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ef1f68a02d0eb500800000000000000
+      internalID: 413782649680633830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_61
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 272
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d034f5c1160abaef0800000000000000
+      internalID: -95806628110056691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_62
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 275
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39cfb0b95709c6360800000000000000
+      internalID: 7164259942026443923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_63
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 273
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05208a9bd3c6dafc0800000000000000
+      internalID: -3482007924523924912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_64
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 272
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5d98d8ee810f3520800000000000000
+      internalID: 2683865616239598942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_65
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 264
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1dd3ddcc3ea476f0800000000000000
+      internalID: -687733266906358498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_66
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 276
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c89b4a3852e71f9e0800000000000000
+      internalID: -1589350493897574004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_67
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 266
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8065573fca17d650800000000000000
+      internalID: 6257499684543488141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_68
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 258
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50025e8a95c11fa10800000000000000
+      internalID: 1941364085784649733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_69
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 264
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a961bb86594b51d0800000000000000
+      internalID: -3361012060842268252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_70
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 253
+        width: 23
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62e77a91f4f0c5d50800000000000000
+      internalID: 6727268775791918630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_71
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 249
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18f7dda3cb429a730800000000000000
+      internalID: 4010777334010183553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_72
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 240
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b7d550089aec4df0800000000000000
+      internalID: -194522745322219592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_73
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 238
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6ee375e834d7f5a0800000000000000
+      internalID: -6487483397371072914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_74
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 242
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 236f5bc571cb297c0800000000000000
+      internalID: -4065980705036437966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_75
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 242
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 772af8259421720f0800000000000000
+      internalID: -1141923874388073865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_76
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 216
+        width: 50
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2aa4dc7c8665d150800000000000000
+      internalID: 5896732040687299115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_77
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 251
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccec148c6e0a65700800000000000000
+      internalID: 528786919325290188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_78
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 218
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b36250eb75491150800000000000000
+      internalID: 5843778389836719031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_79
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 234
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f50fd97f32e2e8410800000000000000
+      internalID: 1481172059464527967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_80
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 215
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80d354156df428180800000000000000
+      internalID: -9114634913939374840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_81
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 230
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76485a7364e66e940800000000000000
+      internalID: 5325064857272550503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_82
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 234
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de1e1429ba4849f50800000000000000
+      internalID: 6887275602584396269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_83
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 0
+        width: 105
+        height: 200
+      alignment: 9
+      pivot: {x: 0.49999934, y: 0.4807801}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b1af70aa15be3820800000000000000
+      internalID: 2899954336039674288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_84
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 213
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83dc8a11d84621f10800000000000000
+      internalID: 2238962521805999416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_85
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 219
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5a814c5f940588c0800000000000000
+      internalID: -3997784011727336870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_86
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 211
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b30082c856d510e0800000000000000
+      internalID: -2299696357994134603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_87
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 211
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cf72ca5bc36b9970800000000000000
+      internalID: 8762707225031638979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_88
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 77
+        width: 72
+        height: 146
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c13bbaa214e6f05d0800000000000000
+      internalID: -3094133192812416228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_89
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 206
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d74aae9e4aa3b1c0800000000000000
+      internalID: -4489057148912121901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_90
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 206
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6d175d99ade84d20800000000000000
+      internalID: 3263119242774912362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_91
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 199
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b671ae2d9e7edad0800000000000000
+      internalID: -2675561915054197069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_92
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 201
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 775ef046b483c2610800000000000000
+      internalID: 1597713864262149495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_93
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 186
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a995a4d6f3e94c1f0800000000000000
+      internalID: -1025520819879913062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_94
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 190
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 274b7a1cace41d160800000000000000
+      internalID: 7048501524550890610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_95
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 193
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68ccdbc633e2b9350800000000000000
+      internalID: 6024459724940758150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_96
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 182
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60a3b74515da61800800000000000000
+      internalID: 582843766612376070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_97
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 174
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0807212c06a2aad0800000000000000
+      internalID: -2692407056188110837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_98
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 176
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f13109b71b7de2f0800000000000000
+      internalID: -941961405232238088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_99
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 164
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1e8069485e3fb270800000000000000
+      internalID: 8268395989784628766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_100
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 174
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 566d128eda649af10800000000000000
+      internalID: 2281432398977685093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_101
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 67
+        width: 65
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8eb00defb1b91070800000000000000
+      internalID: 8077682844538814095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_102
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 161
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 556c12aa571d36e90800000000000000
+      internalID: -7033547889726863787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_103
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 150
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a49436360c94f2960800000000000000
+      internalID: 7579357788537833802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_104
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 143
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25c62fb96143c87f0800000000000000
+      internalID: -609054577891578798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_105
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 140
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20e6119540e00b830800000000000000
+      internalID: 4084780273862012418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_106
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 142
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0095472726e37e980800000000000000
+      internalID: -8509764378345318144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_107
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 94
+        width: 98
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 690bad32fd744b440800000000000000
+      internalID: 4950660914091831446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_108
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 150
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2143a786a9f419c0800000000000000
+      internalID: -3957263678916312786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_109
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 124
+        width: 9
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef25b45bdb09808f0800000000000000
+      internalID: -574049808024907010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_110
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 0
+        width: 228
+        height: 144
+      alignment: 9
+      pivot: {x: 0.6375344, y: 0.49999994}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e5c819f42bc116d0800000000000000
+      internalID: -3021410515330480671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_111
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 143
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a583cd88099f060b0800000000000000
+      internalID: -5737311526103271334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_112
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 134
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c256b19102251d650800000000000000
+      internalID: 6255871655207986476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_113
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 124
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4c4a38213ff391b0800000000000000
+      internalID: -5650892520826450870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_114
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 123
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6eb14c0a43e650a0800000000000000
+      internalID: -6893072272471245205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_115
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 59
+        width: 57
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40509456830dde0f0800000000000000
+      internalID: -1085982994490391292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_116
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 95
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f68d1f14da937c980800000000000000
+      internalID: -8518776753849509777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_117
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 89
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6487e644d50659e70800000000000000
+      internalID: 9121302574005123142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_118
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 96
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b732987a19b08ba10800000000000000
+      internalID: 1925301560909833083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_119
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 58
+        width: 135
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cef606b1f079a79f0800000000000000
+      internalID: -469897119967186964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_120
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 91
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cebcc497ccfe8180800000000000000
+      internalID: -9111067061998797117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_121
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 69
+        width: 95
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81a96fe0d5f533d60800000000000000
+      internalID: 7868737827234028056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_122
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 111
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 207ae572be572c5b0800000000000000
+      internalID: -5349583754524449022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_123
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 106
+        width: 9
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c6f0ab34cb7ab050800000000000000
+      internalID: 5817097951446628035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_124
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 95
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed6cfc35549c0b810800000000000000
+      internalID: 1779143152407398110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_125
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 99
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85fd82b8038f427c0800000000000000
+      internalID: -4096876873623478440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_126
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 94
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ecd77a571e1d26c0800000000000000
+      internalID: -4166640994596954910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_127
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 91
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 574495ff7bf05a7c0800000000000000
+      internalID: -4060822206067161995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_128
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 98
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da78fad7fa3348420800000000000000
+      internalID: 2631284911112161197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_129
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 95
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 297fe3077803b0a90800000000000000
+      internalID: -7346725008862939246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_130
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 99
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8b600356aa081d90800000000000000
+      internalID: -7126934700840424563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_131
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 90
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a38c9adab5feb330800000000000000
+      internalID: 3728687724389761957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_132
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 145
+        width: 86
+        height: 175
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ec4e5e488ed77cd0800000000000000
+      internalID: -2560333186125116191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_133
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 92
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0df311aefd7e89350800000000000000
+      internalID: 6023819450498760656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_134
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 79
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 883a0f718ecc5b7b0800000000000000
+      internalID: -5209032096777985144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_135
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 79
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14adf2479017b0750800000000000000
+      internalID: 6272231191461485121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_136
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 85
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 935459f85f3743440800000000000000
+      internalID: 4914680591881159993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_137
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 85
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c0395d895e8746f0800000000000000
+      internalID: -700434701758156606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_138
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 82
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37a73e3de44569440800000000000000
+      internalID: 4942230338624780915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_139
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 84
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65e200bcb5d3637b0800000000000000
+      internalID: -5244937251569258922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_140
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 82
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9828fc3b9293caa40800000000000000
+      internalID: 5380738506074063497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_141
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 71
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39d5f8a5ffaea7d50800000000000000
+      internalID: 6735954575142903187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_142
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 74
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1ea54c1aade75a50800000000000000
+      internalID: 6509933101261893148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_143
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 401
+        width: 160
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 897a64ca9af1f4b938a6373fb32c7b8c
+      internalID: -1171002499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpacePlayer_144
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 52
+        width: 100
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df27ce6240bf849c8aec049cea397b77
+      internalID: -641901453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: b37cc985dd4834db5b89b1429b96cf46
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SpacePlayer_0: 6498672735498691982
+      SpacePlayer_1: -881434452998160128
+      SpacePlayer_10: -7021866136356869258
+      SpacePlayer_100: 2281432398977685093
+      SpacePlayer_101: 8077682844538814095
+      SpacePlayer_102: -7033547889726863787
+      SpacePlayer_103: 7579357788537833802
+      SpacePlayer_104: -609054577891578798
+      SpacePlayer_105: 4084780273862012418
+      SpacePlayer_106: -8509764378345318144
+      SpacePlayer_107: 4950660914091831446
+      SpacePlayer_108: -3957263678916312786
+      SpacePlayer_109: -574049808024907010
+      SpacePlayer_11: -3592557034251011363
+      SpacePlayer_110: -3021410515330480671
+      SpacePlayer_111: -5737311526103271334
+      SpacePlayer_112: 6255871655207986476
+      SpacePlayer_113: -5650892520826450870
+      SpacePlayer_114: -6893072272471245205
+      SpacePlayer_115: -1085982994490391292
+      SpacePlayer_116: -8518776753849509777
+      SpacePlayer_117: 9121302574005123142
+      SpacePlayer_118: 1925301560909833083
+      SpacePlayer_119: -469897119967186964
+      SpacePlayer_12: -2839324692327062294
+      SpacePlayer_120: -9111067061998797117
+      SpacePlayer_121: 7868737827234028056
+      SpacePlayer_122: -5349583754524449022
+      SpacePlayer_123: 5817097951446628035
+      SpacePlayer_124: 1779143152407398110
+      SpacePlayer_125: -4096876873623478440
+      SpacePlayer_126: -4166640994596954910
+      SpacePlayer_127: -4060822206067161995
+      SpacePlayer_128: 2631284911112161197
+      SpacePlayer_129: -7346725008862939246
+      SpacePlayer_13: 3798937160896827093
+      SpacePlayer_130: -7126934700840424563
+      SpacePlayer_131: 3728687724389761957
+      SpacePlayer_132: -2560333186125116191
+      SpacePlayer_133: 6023819450498760656
+      SpacePlayer_134: -5209032096777985144
+      SpacePlayer_135: 6272231191461485121
+      SpacePlayer_136: 4914680591881159993
+      SpacePlayer_137: -700434701758156606
+      SpacePlayer_138: 4942230338624780915
+      SpacePlayer_139: -5244937251569258922
+      SpacePlayer_14: -2100404194934913743
+      SpacePlayer_140: 5380738506074063497
+      SpacePlayer_141: 6735954575142903187
+      SpacePlayer_142: 6509933101261893148
+      SpacePlayer_143: -1171002499
+      SpacePlayer_144: -641901453
+      SpacePlayer_15: -5230486732222703623
+      SpacePlayer_16: -5691004695505068769
+      SpacePlayer_17: -4868763178037141539
+      SpacePlayer_18: 8836699069664070569
+      SpacePlayer_19: 8310253905419350488
+      SpacePlayer_2: 6231306993674691605
+      SpacePlayer_20: -3379220833123697293
+      SpacePlayer_21: 612152155363531665
+      SpacePlayer_22: 1366152448863769819
+      SpacePlayer_23: -852953379351389417
+      SpacePlayer_24: 211392337820244579
+      SpacePlayer_25: -9132151249542811891
+      SpacePlayer_26: -600537678139917730
+      SpacePlayer_27: 7289708200239066317
+      SpacePlayer_28: -6757532077654194973
+      SpacePlayer_29: -3146320975590240953
+      SpacePlayer_3: -2461756324289164998
+      SpacePlayer_30: 1649459389729263209
+      SpacePlayer_31: -8537989021813463490
+      SpacePlayer_32: 7345494970485119466
+      SpacePlayer_33: -8058533662933161937
+      SpacePlayer_34: 1368648301272130685
+      SpacePlayer_35: -6372235132800733385
+      SpacePlayer_36: -1368385859205168002
+      SpacePlayer_37: 8698018622335826821
+      SpacePlayer_38: 5108391710704401854
+      SpacePlayer_39: 2093660952333508496
+      SpacePlayer_4: 2153077321659588860
+      SpacePlayer_40: 9199010078582735742
+      SpacePlayer_41: -9086948944109521892
+      SpacePlayer_42: 7433491211460014696
+      SpacePlayer_43: 1979034354929378970
+      SpacePlayer_44: -2961215304037517996
+      SpacePlayer_45: -8861593736478001920
+      SpacePlayer_46: 1332055697327722616
+      SpacePlayer_47: -761585745859711306
+      SpacePlayer_48: -8798188305322944187
+      SpacePlayer_49: -5015725363490360310
+      SpacePlayer_5: -486555342507154926
+      SpacePlayer_50: -8561130158854776820
+      SpacePlayer_51: -2584694163240230053
+      SpacePlayer_52: 3790549547453271811
+      SpacePlayer_53: 1911923023504981212
+      SpacePlayer_54: -8274145439020726613
+      SpacePlayer_55: -6851605694296989623
+      SpacePlayer_56: 3790379203008726595
+      SpacePlayer_57: -7802416320873894289
+      SpacePlayer_58: 5395105881613119062
+      SpacePlayer_59: 1937462447717987375
+      SpacePlayer_6: -339576769390992853
+      SpacePlayer_60: 413782649680633830
+      SpacePlayer_61: -95806628110056691
+      SpacePlayer_62: 7164259942026443923
+      SpacePlayer_63: -3482007924523924912
+      SpacePlayer_64: 2683865616239598942
+      SpacePlayer_65: -687733266906358498
+      SpacePlayer_66: -1589350493897574004
+      SpacePlayer_67: 6257499684543488141
+      SpacePlayer_68: 1941364085784649733
+      SpacePlayer_69: -3361012060842268252
+      SpacePlayer_7: 1741769410060639486
+      SpacePlayer_70: 6727268775791918630
+      SpacePlayer_71: 4010777334010183553
+      SpacePlayer_72: -194522745322219592
+      SpacePlayer_73: -6487483397371072914
+      SpacePlayer_74: -4065980705036437966
+      SpacePlayer_75: -1141923874388073865
+      SpacePlayer_76: 5896732040687299115
+      SpacePlayer_77: 528786919325290188
+      SpacePlayer_78: 5843778389836719031
+      SpacePlayer_79: 1481172059464527967
+      SpacePlayer_8: 3950317686347909559
+      SpacePlayer_80: -9114634913939374840
+      SpacePlayer_81: 5325064857272550503
+      SpacePlayer_82: 6887275602584396269
+      SpacePlayer_83: 2899954336039674288
+      SpacePlayer_84: 2238962521805999416
+      SpacePlayer_85: -3997784011727336870
+      SpacePlayer_86: -2299696357994134603
+      SpacePlayer_87: 8762707225031638979
+      SpacePlayer_88: -3094133192812416228
+      SpacePlayer_89: -4489057148912121901
+      SpacePlayer_9: -219856691276389678
+      SpacePlayer_90: 3263119242774912362
+      SpacePlayer_91: -2675561915054197069
+      SpacePlayer_92: 1597713864262149495
+      SpacePlayer_93: -1025520819879913062
+      SpacePlayer_94: 7048501524550890610
+      SpacePlayer_95: 6024459724940758150
+      SpacePlayer_96: 582843766612376070
+      SpacePlayer_97: -2692407056188110837
+      SpacePlayer_98: -941961405232238088
+      SpacePlayer_99: 8268395989784628766
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
