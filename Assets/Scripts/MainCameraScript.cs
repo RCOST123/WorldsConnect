@@ -12,9 +12,10 @@ public class CameraFollow : MonoBehaviour
     public float heartSpacing = 1f;
     public float heartScale = 0.5f;
 
-    private float fixedX;
     private float minY;
     private float maxY;
+    private float minX;
+    private float maxX;
 
     private PlayerController playerController;
     private GameObject[] heartObjects;
@@ -22,18 +23,21 @@ public class CameraFollow : MonoBehaviour
 
     void Start()
     {
-        fixedX = transform.position.x;
 
         CameraBounds bounds = FindFirstObjectByType<CameraBounds>();
         if (bounds != null)
         {
             minY = bounds.minY;
             maxY = bounds.maxY;
+            minX = bounds.minX;
+            maxX = bounds.maxX;
         }
         else
         {
             minY = 0f;
             maxY = Mathf.Infinity;
+            minX = -5f;
+            maxX = 50f;
         }
 
         if (player != null)
@@ -52,8 +56,9 @@ public class CameraFollow : MonoBehaviour
     {
         if (player != null)
         {
+            float clampedX = Mathf.Clamp(player.position.x, minX, maxX);
             float clampedY = Mathf.Clamp(player.position.y, minY, maxY);
-            Vector3 targetPos = new Vector3(fixedX, clampedY, transform.position.z);
+            Vector3 targetPos = new Vector3(clampedX, clampedY, transform.position.z);
             transform.position = Vector3.Lerp(transform.position, targetPos, smoothSpeed * Time.deltaTime);
         }
 
