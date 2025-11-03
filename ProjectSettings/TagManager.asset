@@ -53,6 +53,9 @@ TagManager:
   - name: BACKGROUND
     uniqueID: 1113876429
     locked: 0
+  - name: Trees
+    uniqueID: 3020493923
+    locked: 0
   - name: GAME
     uniqueID: 2292790383
     locked: 0
