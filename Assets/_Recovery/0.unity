@@ -2828,7 +2828,6 @@ MonoBehaviour:
   wallSlideGravity: 0.5
   dashDuration: 0.2
   maxHearts: 5
-  cameraFollow: {fileID: 519420033}
 --- !u!114 &597587791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4492,6 +4491,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CameraBounds
   minY: 0
   maxY: Infinity
+  minX: -3
+  maxX: 50
 --- !u!4 &1056574946
 Transform:
   m_ObjectHideFlags: 0
@@ -8313,11 +8314,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5233343362969188438, guid: 5321a2b13fe3e4fa1a9b4dabddcfdb14, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.7
+      value: 2.83
       objectReference: {fileID: 0}
     - target: {fileID: 5233343362969188438, guid: 5321a2b13fe3e4fa1a9b4dabddcfdb14, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 15.51
+      value: -1.25
       objectReference: {fileID: 0}
     - target: {fileID: 5233343362969188438, guid: 5321a2b13fe3e4fa1a9b4dabddcfdb14, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8365,7 +8366,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8744104994551839228, guid: 5321a2b13fe3e4fa1a9b4dabddcfdb14, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8744104994551839228, guid: 5321a2b13fe3e4fa1a9b4dabddcfdb14, type: 3}
       propertyPath: m_TagString

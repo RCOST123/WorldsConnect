@@ -28,13 +28,12 @@ public class PlayerController : MonoBehaviour
 
     [Header("Respawn Settings")]
     private Vector3 lastPlatformPosition;
+    private Vector3 previousPlatformPosition;
     private bool hasValidRespawnPoint;
 
     // Components
     private Rigidbody2D rb;
     private float initialGravityScale;
-    /// Co-pilot wrote the next line
-    public CameraFollow cameraFollow;
 
     // Ground detection
     private bool isGrounded;
@@ -71,14 +70,13 @@ public class PlayerController : MonoBehaviour
         initialGravityScale = rb.gravityScale;
         currentHearts = maxHearts;
         keysCollected = 0;
+        previousPlatformPosition = Vector3.zero;
     }
 
     void Update()
     {
         if (rb == null) return;
 
-
-        // Get vertical velocity for impact
         lastYVelocity = rb.linearVelocity.y;
 
         // If we're currently dashing, check end and skip normal control while dashing
@@ -95,16 +93,15 @@ public class PlayerController : MonoBehaviour
             if (Time.time >= wallJumpEndTime)
                 wallJumpActive = false;
             else
-                return; 
+                return;
         }
 
         float moveInput = Input.GetAxisRaw("Horizontal");
 
-        // Update facing direction
         if (moveInput != 0f)
             facingDirection = Mathf.Sign(moveInput);
 
-        // If touching a wall and player is pressing away from it, release the wall
+        // Release wall grab if pressing away
         if (isTouchingWall)
         {
             bool movingAway = (wallDirection == 1 && moveInput < 0f) || (wallDirection == -1 && moveInput > 0f);
@@ -115,7 +112,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        // If touching a wall, ignore input
+        // Ignore input into wall
         if (isTouchingWall)
         {
             bool pressingIntoWall = (wallDirection == 1 && moveInput > 0f) || (wallDirection == -1 && moveInput < 0f);
@@ -123,7 +120,7 @@ public class PlayerController : MonoBehaviour
                 moveInput = 0f;
         }
 
-        // Normal horizontal movement
+        // Horizontal movement
         if (!isWallGrabbing)
         {
             rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
@@ -148,20 +145,19 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        // Dash
+        // Dashing
         if (Input.GetKeyDown(KeyCode.LeftShift) && hasDash && !isDashing)
         {
             float dashDir = (Mathf.Approximately(moveInput, 0f)) ? facingDirection : Mathf.Sign(moveInput);
             StartDash(dashDir);
         }
 
-        // Handle wall grabbing / sliding
+        // Handle wall grab / slide
         HandleWallGrab();
     }
 
     private void HandleWallGrab()
     {
-        // Conditions to start/maintain wall grab - have claws, touching wall, not grounded, not dashing
         if (!hasClaws || !isTouchingWall || isGrounded || isDashing)
         {
             if (isWallGrabbing)
@@ -169,28 +165,21 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        // Start grabbing if not already
         if (!isWallGrabbing)
         {
             isWallGrabbing = true;
             wallGrabTimer = wallGrabDuration;
-
-            // Stick to wall
             rb.linearVelocity = Vector2.zero;
             rb.gravityScale = 0f;
-
-            // Reset extra jump
             extraJumpAvailable = true;
         }
 
-        // If still grabbing, count
         if (isWallGrabbing)
         {
             wallGrabTimer -= Time.deltaTime;
 
             if (wallGrabTimer <= 0f)
             {
-                // Start sliding - reduced gravity
                 rb.gravityScale = initialGravityScale * wallSlideGravity;
             }
             else
@@ -202,7 +191,6 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        // Key collection
         if (other.CompareTag("Key"))
         {
             keysCollected++;
@@ -211,23 +199,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // Keycount
-    public int GetKeyCount()
-    {
-        return keysCollected;
-    }
-
-    // Gethearts
-    public int GetCurrentHearts()
-    {
-        return currentHearts;
-    }
-
-    // Method to reset keys (useful for level restart)
-    public void ResetKeys()
-    {
-        keysCollected = 0;
-    }
+    public int GetKeyCount() => keysCollected;
+    public int GetCurrentHearts() => currentHearts;
+    public void ResetKeys() => keysCollected = 0;
 
     private void StopWallGrab()
     {
@@ -243,19 +217,12 @@ public class PlayerController : MonoBehaviour
 
     private void WallJump()
     {
-        // If wall is on right (wallDirection = 1), push left (negative)
-        // If wall is on left (wallDirection = -1), push right (positive)
         float pushDirection = -wallDirection;
         rb.linearVelocity = new Vector2(pushDirection * wallJumpHorizontalPush, jumpForce);
 
-        // Reset wall states
         isWallGrabbing = false;
         isTouchingWall = false;
-
-        // Restore gravity
         rb.gravityScale = initialGravityScale;
-
-        // Give a jump reset
         extraJumpAvailable = true;
         isGrounded = false;
 
@@ -267,8 +234,6 @@ public class PlayerController : MonoBehaviour
     {
         isDashing = true;
         dashEndTime = Time.time + dashDuration;
-
-        // Remove gravity for a clean horizontal dash
         rb.gravityScale = 0f;
         rb.linearVelocity = new Vector2(dirSign * dashForce, 0f);
     }
@@ -299,44 +264,53 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        // Handle ground/platform contacts
+        // Handle ground/platform contacts and also side-as-wall logic
         if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Platform") || collision.gameObject.CompareTag("UnsafePlatform"))
         {
             foreach (var contact in collision.contacts)
             {
                 if (contact.normal.y > 0.5f)
                 {
-                    // Fall damage check
                     float impactSpeed = Mathf.Abs(lastYVelocity);
                     if (!isGrounded && impactSpeed > fallDamageThreshold)
                     {
-                        TakeDamage(1);
+                        TakeDamage(1, false);
                         Debug.Log("Impact speed: " + impactSpeed.ToString("F1"));
                     }
 
                     isGrounded = true;
                     extraJumpAvailable = true;
 
-                    // Store platform position as respawn point
+                    // Store platform position as respawn point, changing to last one
                     if (collision.gameObject.CompareTag("Platform"))
                     {
+                        if (hasValidRespawnPoint)
+                        {
+                            previousPlatformPosition = lastPlatformPosition;
+                        }
+
                         lastPlatformPosition = transform.position;
                         hasValidRespawnPoint = true;
-                        Debug.Log("Respawn point saved at: " + lastPlatformPosition);
+
+                        Debug.Log("Respawn point saved at: " + lastPlatformPosition + " (previous: " + previousPlatformPosition + ")");
                     }
 
-                    // Restore gravity
                     rb.gravityScale = initialGravityScale;
                     break;
+                }
+
+                if (Mathf.Abs(contact.normal.x) > 0.5f)
+                {
+                    isTouchingWall = true;
+                    wallDirection = (contact.normal.x > 0f) ? -1 : 1;
                 }
             }
         }
         else if (collision.gameObject.CompareTag("Enemy"))
         {
-            TakeDamage(1);
+            TakeDamage(1, true); // enemy damage
         }
 
-        // Handle wall contacts
         if (collision.gameObject.CompareTag("Wall"))
         {
             isTouchingWall = true;
@@ -344,7 +318,6 @@ public class PlayerController : MonoBehaviour
             if (collision.contacts.Length > 0)
             {
                 var n = collision.contacts[0].normal.x;
-                // If normal.x > 0 -> wall is to the left, set wallDirection = -1
                 wallDirection = (n > 0f) ? -1 : 1;
             }
         }
@@ -357,30 +330,52 @@ public class PlayerController : MonoBehaviour
             isGrounded = false;
         }
 
-        if (collision.gameObject.CompareTag("Wall"))
+        if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Platform"))
         {
             isTouchingWall = false;
             StopWallGrab();
         }
     }
 
-    // all dmg triggers
-    public void TakeDamage(int amount)
+    // Damage handling
+    public void TakeDamage(int amount, bool fromEnemy)
     {
-
         currentHearts -= amount;
         currentHearts = Mathf.Max(currentHearts, 0);
-        Debug.Log("Damage taken! Hearts left: " + currentHearts);
+        Debug.Log("Damage taken! Hearts left: " + currentHearts + " (enemy damage: " + fromEnemy + ")");
 
         if (currentHearts <= 0)
         {
-           ///Co-pilot wrote the next line
-           cameraFollow.UpdateHeartDisplay();
             Die();
         }
         else
         {
-            // Respawn at last platform
+            if (fromEnemy)
+                RespawnAtPreviousPlatform();
+            else
+                RespawnAtLastPlatform();
+        }
+    }
+
+    private void RespawnAtPreviousPlatform()
+    {
+        if (previousPlatformPosition != Vector3.zero)
+        {
+            transform.position = previousPlatformPosition;
+            rb.linearVelocity = Vector2.zero;
+
+            isGrounded = false;
+            isTouchingWall = false;
+            isWallGrabbing = false;
+            isDashing = false;
+            wallJumpActive = false;
+            rb.gravityScale = initialGravityScale;
+
+            Debug.Log("Respawned at previous platform: " + previousPlatformPosition);
+        }
+        else
+        {
+            Debug.Log("No previous platform saved so we use last one instead.");
             RespawnAtLastPlatform();
         }
     }
@@ -389,30 +384,29 @@ public class PlayerController : MonoBehaviour
     {
         if (hasValidRespawnPoint)
         {
-            // Teleport to last platform position
-            transform.position = lastPlatformPosition;
-            
-            // Reset velocity
+            Vector3 respawnPoint = (previousPlatformPosition != Vector3.zero) ? lastPlatformPosition : lastPlatformPosition;
+            transform.position = respawnPoint;
             rb.linearVelocity = Vector2.zero;
-            
-            // Reset states
+
             isGrounded = false;
             isTouchingWall = false;
             isWallGrabbing = false;
             isDashing = false;
             wallJumpActive = false;
-            
-            // Restore gravity
             rb.gravityScale = initialGravityScale;
-            
+
+            Debug.Log("Respawned at: " + respawnPoint);
+        }
+        else
+        {
+            Debug.Log("No valid respawn point saved.");
         }
     }
 
     private void Die()
     {
         Debug.Log("Game Over!");
-        Destroy(gameObject);
-        // Add death logic here (reload scene, show game over screen, etc.)
+        // Add restart or game over logic here
     }
 
     private void LoseHeart(int amount)
