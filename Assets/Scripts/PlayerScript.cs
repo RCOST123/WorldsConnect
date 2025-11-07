@@ -28,7 +28,6 @@ public class PlayerController : MonoBehaviour
 
     [Header("Respawn Settings")]
     private Vector3 lastPlatformPosition;
-    private Vector3 previousPlatformPosition;
     private bool hasValidRespawnPoint;
 
     // Components
@@ -70,7 +69,6 @@ public class PlayerController : MonoBehaviour
         initialGravityScale = rb.gravityScale;
         currentHearts = maxHearts;
         keysCollected = 0;
-        previousPlatformPosition = Vector3.zero;
     }
 
     void Update()
@@ -281,18 +279,17 @@ public class PlayerController : MonoBehaviour
                     isGrounded = true;
                     extraJumpAvailable = true;
 
-                    // Store platform position as respawn point, changing to last one
-                    if (collision.gameObject.CompareTag("Platform"))
+                    // Store platform position as respawn point, but ONLY if it's a safe platform
+                    if (collision.gameObject.CompareTag("Platform") && !collision.gameObject.CompareTag("UnsafePlatform"))
                     {
-                        if (hasValidRespawnPoint)
-                        {
-                            previousPlatformPosition = lastPlatformPosition;
-                        }
-
                         lastPlatformPosition = transform.position;
                         hasValidRespawnPoint = true;
 
-                        Debug.Log("Respawn point saved at: " + lastPlatformPosition + " (previous: " + previousPlatformPosition + ")");
+                        Debug.Log("Respawn point saved at: " + lastPlatformPosition);
+                    }
+                    else if (collision.gameObject.CompareTag("UnsafePlatform"))
+                    {
+                        Debug.Log("Landed on unsafe platform - no respawn point saved");
                     }
 
                     rb.gravityScale = initialGravityScale;
@@ -350,32 +347,6 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            if (fromEnemy)
-                RespawnAtPreviousPlatform();
-            else
-                RespawnAtLastPlatform();
-        }
-    }
-
-    private void RespawnAtPreviousPlatform()
-    {
-        if (previousPlatformPosition != Vector3.zero)
-        {
-            transform.position = previousPlatformPosition;
-            rb.linearVelocity = Vector2.zero;
-
-            isGrounded = false;
-            isTouchingWall = false;
-            isWallGrabbing = false;
-            isDashing = false;
-            wallJumpActive = false;
-            rb.gravityScale = initialGravityScale;
-
-            Debug.Log("Respawned at previous platform: " + previousPlatformPosition);
-        }
-        else
-        {
-            Debug.Log("No previous platform saved so we use last one instead.");
             RespawnAtLastPlatform();
         }
     }
@@ -384,8 +355,7 @@ public class PlayerController : MonoBehaviour
     {
         if (hasValidRespawnPoint)
         {
-            Vector3 respawnPoint = (previousPlatformPosition != Vector3.zero) ? lastPlatformPosition : lastPlatformPosition;
-            transform.position = respawnPoint;
+            transform.position = lastPlatformPosition;
             rb.linearVelocity = Vector2.zero;
 
             isGrounded = false;
@@ -395,7 +365,7 @@ public class PlayerController : MonoBehaviour
             wallJumpActive = false;
             rb.gravityScale = initialGravityScale;
 
-            Debug.Log("Respawned at: " + respawnPoint);
+            Debug.Log("Respawned at last safe platform: " + lastPlatformPosition);
         }
         else
         {
