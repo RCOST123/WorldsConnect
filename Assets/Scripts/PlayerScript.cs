@@ -30,6 +30,10 @@ public class PlayerController : MonoBehaviour
     private Vector3 lastPlatformPosition;
     private bool hasValidRespawnPoint;
 
+    [Header("Sounds")]
+    public AudioClip woodSound;
+    public AudioClip wingSound;
+
     // Components
     private Rigidbody2D rb;
     private float initialGravityScale;
@@ -130,6 +134,7 @@ public class PlayerController : MonoBehaviour
             if (isGrounded)
             {
                 Jump();
+                AudioSource.PlayClipAtPoint(woodSound, transform.position);
             }
             else if (isWallGrabbing || (hasClaws && isTouchingWall))
             {
@@ -139,6 +144,7 @@ public class PlayerController : MonoBehaviour
             else if (hasExtraJump && extraJumpAvailable)
             {
                 Jump();
+                AudioSource.PlayClipAtPoint(wingSound, transform.position);
                 extraJumpAvailable = false;
             }
         }
@@ -207,10 +213,11 @@ public class PlayerController : MonoBehaviour
         rb.gravityScale = initialGravityScale;
     }
 
-    private void Jump()
+    public void Jump()
     {
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         isGrounded = false;
+        ///AudioSource.PlayClipAtPoint(woodSound, transform.position);
     }
 
     private void WallJump()

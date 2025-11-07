@@ -56,6 +56,9 @@ TagManager:
   - name: Trees
     uniqueID: 3020493923
     locked: 0
+  - name: Lava
+    uniqueID: 2364107249
+    locked: 0
   - name: GAME
     uniqueID: 2292790383
     locked: 0
