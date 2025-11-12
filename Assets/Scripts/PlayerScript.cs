@@ -37,6 +37,8 @@ public class PlayerController : MonoBehaviour
     [Header("Sounds")]
     public AudioClip woodSound;
     public AudioClip wingSound;
+    public AudioClip heartSound;
+    public AudioClip keySound;
 
     // Components
     private Rigidbody2D rb;
@@ -121,7 +123,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        // prevent pressing into wall
+        //prevent pressing into wall
         if (isTouchingWall)
         {
             bool pressingIntoWall = (wallDirection == 1 && moveInput > 0f) || (wallDirection == -1 && moveInput < 0f);
@@ -201,6 +203,7 @@ public class PlayerController : MonoBehaviour
         {
             keysCollected++;
             Debug.Log("Key collected! Total keys: " + keysCollected);
+            AudioSource.PlayClipAtPoint(keySound, transform.position);
             Destroy(other.gameObject);
         }
     }
@@ -349,6 +352,7 @@ public class PlayerController : MonoBehaviour
         currentHearts -= amount;
         currentHearts = Mathf.Max(currentHearts, 0);
         Debug.Log("Damage taken! Hearts left: " + currentHearts);
+        AudioSource.PlayClipAtPoint(heartSound, transform.position);
 
         if (currentHearts <= 0)
         {
@@ -388,4 +392,5 @@ public class PlayerController : MonoBehaviour
         currentHearts = Mathf.Max(currentHearts, 0);
         Debug.Log("Hearts left: " + currentHearts);
     }
+    
 }

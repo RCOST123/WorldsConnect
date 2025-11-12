@@ -6,6 +6,7 @@ public class DoorController : MonoBehaviour
     private PlayerController player;
     private bool doorUnlocked = false;
     public GameObject unlocked_door;
+    public AudioClip doorSound;
 
     void Start()
     {
@@ -27,6 +28,7 @@ public class DoorController : MonoBehaviour
         Debug.Log("Door unlocked!");
         // Animate door, disable collider, load next scene, etc.
         unlocked_door.SetActive(true);
+        AudioSource.PlayClipAtPoint(doorSound, transform.position);
         Destroy(gameObject); // Or disable the door collider
     }
 }

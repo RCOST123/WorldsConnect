@@ -3192,6 +3192,8 @@ MonoBehaviour:
   maxHearts: 5
   woodSound: {fileID: 8300000, guid: 6598263a4cb134ebcbf838840fcfd5a9, type: 3}
   wingSound: {fileID: 8300000, guid: ff923ab14a54f4da6a63951ae80c9261, type: 3}
+  heartSound: {fileID: 8300000, guid: 7ea6a222cd5964a4eaa2954d6f3fb294, type: 3}
+  keySound: {fileID: 8300000, guid: b7adb46dacc514a559ac9d9677f7d488, type: 3}
   cameraFollow: {fileID: 519420033}
 --- !u!114 &597587791
 MonoBehaviour:
@@ -5846,6 +5848,7 @@ MonoBehaviour:
   pointA: {fileID: 1120575034}
   pointB: {fileID: 877598244}
   speed: 2
+  chirpSound: {fileID: 0}
 --- !u!1001 &1122331106
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9194,6 +9197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoorScript
   nextdoor: {fileID: 287729130}
   doorpos: {x: 4.531032, y: 4.301, z: 0}
+  opendoorSound: {fileID: 8300000, guid: 8a3007c4e66d349ceb36c5003d9b81d9, type: 3}
 --- !u!1 &1649456489
 GameObject:
   m_ObjectHideFlags: 0
@@ -10206,7 +10210,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 90
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -11534,6 +11538,7 @@ MonoBehaviour:
   pointA: {fileID: 1030025318}
   pointB: {fileID: 1937298416}
   speed: 2
+  chirpSound: {fileID: 8300000, guid: b01eb9ddb07ae421e9d4126806c352c1, type: 3}
 --- !u!1 &1926038289
 GameObject:
   m_ObjectHideFlags: 0
@@ -11621,6 +11626,7 @@ MonoBehaviour:
   pointA: {fileID: 1155737614}
   pointB: {fileID: 75333369}
   speed: 2
+  chirpSound: {fileID: 8300000, guid: b01eb9ddb07ae421e9d4126806c352c1, type: 3}
 --- !u!50 &1926038293
 Rigidbody2D:
   serializedVersion: 5
@@ -12342,6 +12348,7 @@ MonoBehaviour:
   pointA: {fileID: 1785576735}
   pointB: {fileID: 1187072714}
   speed: 2
+  chirpSound: {fileID: 8300000, guid: b01eb9ddb07ae421e9d4126806c352c1, type: 3}
 --- !u!70 &2027582411
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -13530,6 +13537,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1770316065}
     m_Modifications:
     - target: {fileID: 1072003733628844502, guid: a4239a4fc5a3d405ca49f9c3626f68aa, type: 3}
+      propertyPath: doorSound
+      value: 
+      objectReference: {fileID: 8300000, guid: da215167b1f274e75b3b682c0f4a5cee, type: 3}
+    - target: {fileID: 1072003733628844502, guid: a4239a4fc5a3d405ca49f9c3626f68aa, type: 3}
       propertyPath: keysRequired
       value: 3
       objectReference: {fileID: 0}
@@ -13537,6 +13548,10 @@ PrefabInstance:
       propertyPath: unlocked_door
       value: 
       objectReference: {fileID: 1645195625}
+    - target: {fileID: 1072003733628844502, guid: a4239a4fc5a3d405ca49f9c3626f68aa, type: 3}
+      propertyPath: collectableSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b7adb46dacc514a559ac9d9677f7d488, type: 3}
     - target: {fileID: 1355324237741799437, guid: a4239a4fc5a3d405ca49f9c3626f68aa, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -13591,7 +13606,7 @@ PrefabInstance:
       objectReference: {fileID: 1082667679859266002, guid: c7dac441ccc8d41d7aef9d38fb88aef5, type: 3}
     - target: {fileID: 4717158802418153764, guid: a4239a4fc5a3d405ca49f9c3626f68aa, type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4717158802418153764, guid: a4239a4fc5a3d405ca49f9c3626f68aa, type: 3}
       propertyPath: m_SortingLayerID
@@ -13599,11 +13614,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4988148154614775083, guid: a4239a4fc5a3d405ca49f9c3626f68aa, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 3.41
+      value: 3.49
       objectReference: {fileID: 0}
     - target: {fileID: 4988148154614775083, guid: a4239a4fc5a3d405ca49f9c3626f68aa, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 5.41
+      value: 4.23
       objectReference: {fileID: 0}
     - target: {fileID: 6892623044619264728, guid: a4239a4fc5a3d405ca49f9c3626f68aa, type: 3}
       propertyPath: m_Name

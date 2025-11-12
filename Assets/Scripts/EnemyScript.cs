@@ -5,6 +5,7 @@ public class EnemyScript : MonoBehaviour
     public Transform pointA;      // first patrol point
     public Transform pointB;      // second patrol point
     public float speed = 2f;      // movement speed
+    public AudioClip chirpSound;
 
     private Transform target;     // current target point
 
@@ -29,6 +30,7 @@ public class EnemyScript : MonoBehaviour
         if (Vector2.Distance(transform.position, target.position) < 0.05f)
         {
             target = target == pointA ? pointB : pointA;
+            AudioSource.PlayClipAtPoint(chirpSound, transform.position);
             Flip();
         }
     }
