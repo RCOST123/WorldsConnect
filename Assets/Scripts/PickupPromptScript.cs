@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public enum SkillType { Wings, Claws, Dash }
+public enum SkillType { Wings, Claws, Dash, WaterBalloon }
 
 public class SkillPickup : MonoBehaviour
 {
@@ -15,6 +15,7 @@ public class SkillPickup : MonoBehaviour
         playerInRange = true;
         playerController = other.GetComponent<PlayerController>();
 
+        Debug.Log("In Range of " + skillType);
         UIManager.Instance.ShowPickupPrompt("Press W to pick up " + skillType, transform);
     }
 
