@@ -439,7 +439,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -2002176913
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 3095303344709879796, guid: c9b42d46cd6504863af157969b85f0a9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -568,7 +568,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 878299411
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 6929171514242256946, guid: 83df2e5bc558c46a881635911f1cdf8c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -842,7 +842,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -2002176913
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -4545488818227168752, guid: 9b60bbed5497f434786c5003132a8bb6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1304,7 +1304,6 @@ GameObject:
   m_Component:
   - component: {fileID: 526935472}
   - component: {fileID: 526935474}
-  - component: {fileID: 526935473}
   m_Layer: 0
   m_Name: Tree_Backdrop (2)
   m_TagString: Untagged
@@ -1327,103 +1326,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 742895220}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
---- !u!82 &526935473
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 526935471}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 9480528ca778e43789bbcab87331bc67, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1.1814575
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!212 &526935474
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1716,7 +1618,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -2002176913
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -2560333186125116191, guid: 8c41f0594a2d743d8bb52562e6f79fd8, type: 3}
   m_Color: {r: 0.8679245, g: 0.79013884, b: 0.79013884, a: 1}
@@ -1764,7 +1666,12 @@ MonoBehaviour:
   wallGrabDuration: 0.2
   wallSlideGravity: 0.5
   dashDuration: 0.2
+  waterBalloonPrefab: {fileID: 0}
   maxHearts: 5
+  woodSound: {fileID: 0}
+  wingSound: {fileID: 0}
+  heartSound: {fileID: 0}
+  keySound: {fileID: 0}
   cameraFollow: {fileID: 519420033}
 --- !u!114 &597587791
 MonoBehaviour:
@@ -3044,7 +2951,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -2002176913
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 7124505977463404679, guid: b7f327c1638e74348bf4eeb623d996db, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5160,7 +5067,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -2002176913
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 5368484420272513786, guid: 6255436963b22457c9e07bfcfc76f2ce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5248,6 +5155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoorScript
   nextdoor: {fileID: 287729130}
   doorpos: {x: 4.531032, y: 4.301, z: 0}
+  opendoorSound: {fileID: 0}
 --- !u!1 &1665748662
 GameObject:
   m_ObjectHideFlags: 0
@@ -6428,7 +6336,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -2002176913
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 7411588943102096783, guid: ee9f5ea4599fa4ac3a452bdd5f5cfd82, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -6645,7 +6553,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -2002176913
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -6868657723558692519, guid: 7023c3294478443489601753e209e41a, type: 3}
   m_Color: {r: 0.8490566, g: 0.7969918, b: 0.7969918, a: 1}
@@ -6673,6 +6581,7 @@ MonoBehaviour:
   pointA: {fileID: 1030025318}
   pointB: {fileID: 1937298416}
   speed: 2
+  chirpSound: {fileID: 0}
 --- !u!1 &1926814997 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6006958961998273148, guid: a65bc8e148baf490aa24c4d4496de780, type: 3}
@@ -7084,7 +6993,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -2002176913
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -5420537988700103584, guid: ec4fa2b58f5044065be4dcfad65c6829, type: 3}
   m_Color: {r: 1, g: 0.9575472, b: 0.9575472, a: 1}
@@ -7333,7 +7242,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -2002176913
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -6868657723558692519, guid: 7023c3294478443489601753e209e41a, type: 3}
   m_Color: {r: 0.9150943, g: 0.876246, b: 0.876246, a: 1}
@@ -7376,6 +7285,7 @@ MonoBehaviour:
   pointA: {fileID: 1785576735}
   pointB: {fileID: 1187072714}
   speed: 2
+  chirpSound: {fileID: 0}
 --- !u!1 &2099012383 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6006958961998273148, guid: a65bc8e148baf490aa24c4d4496de780, type: 3}

@@ -448,7 +448,7 @@ GameObject:
   - component: {fileID: 162291763}
   - component: {fileID: 162291762}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: L3Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1132,6 +1132,7 @@ GameObject:
   - component: {fileID: 1128466826}
   - component: {fileID: 1128466825}
   - component: {fileID: 1128466828}
+  - component: {fileID: 1128466829}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1257,6 +1258,24 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &1128466829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128466824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aba881dbbcd849f0b2185cb4bef3513, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScreenManagerlevels
+  leftbutton: {fileID: 1620603957}
+  middlebutton: {fileID: 1141079217}
+  rightbutton: {fileID: 162291762}
+  leftsceneName: Level_1
+  middlesceneName: Level_2
+  rightsceneName: Level_3
 --- !u!1 &1141079215
 GameObject:
   m_ObjectHideFlags: 0
@@ -1270,7 +1289,7 @@ GameObject:
   - component: {fileID: 1141079218}
   - component: {fileID: 1141079217}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: L2Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1563,8 +1582,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1620603956}
-  - {fileID: 162291761}
   - {fileID: 1141079216}
+  - {fileID: 162291761}
   - {fileID: 98017855}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1902,7 +1921,7 @@ GameObject:
   - component: {fileID: 1620603958}
   - component: {fileID: 1620603957}
   m_Layer: 5
-  m_Name: Button
+  m_Name: L1Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

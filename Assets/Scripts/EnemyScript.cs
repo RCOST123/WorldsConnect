@@ -6,7 +6,6 @@ public class EnemyScript : MonoBehaviour
     public Transform pointB;      // second patrol point
     public float speed = 2f;      // movement speed
     public AudioClip chirpSound;
-
     private Transform target;     // current target point
 
     void Start()
