@@ -40,6 +40,21 @@ public class PlayerController : MonoBehaviour
     public AudioClip heartSound;
     public AudioClip keySound;
 
+    [Header("Key settings")]
+    public int maxKeys = 3;
+    private int currentKeys = 0;
+
+    public int GetCurrentKeys() => currentKeys;
+
+    public void AddKey()
+    {
+        if (currentKeys < maxKeys)
+            currentKeys++;
+            Debug.LogError("addkey works!");
+    }
+    public PlayerController playerController; 
+
+
     // Components
     private Rigidbody2D rb;
     private float initialGravityScale;
@@ -205,6 +220,8 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Key collected! Total keys: " + keysCollected);
             AudioSource.PlayClipAtPoint(keySound, transform.position);
             Destroy(other.gameObject);
+            AddKey();
+
         }
     }
 
@@ -287,12 +304,12 @@ public class PlayerController : MonoBehaviour
         {
             foreach (var contact in collision.contacts)
             {
-                if (Mathf.Abs(contact.normal.x) > 0.5f)
-                {
-                    isTouchingWall = true;
-                    wallDirection = (contact.normal.x > 0f) ? -1 : 1;
-                    return; // don't let it count as ground
-                }
+                //if (Mathf.Abs(contact.normal.x) > 0.5f)
+               // {
+                  //  isTouchingWall = true;
+                  //  wallDirection = (contact.normal.x > 0f) ? -1 : 1;
+                  //  return; // don't let it count as ground
+               // }
 
                 if (contact.normal.y > 0.5f)
                 {
