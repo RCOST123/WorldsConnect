@@ -304,12 +304,12 @@ public class PlayerController : MonoBehaviour
         {
             foreach (var contact in collision.contacts)
             {
-                if (Mathf.Abs(contact.normal.x) > 0.5f)
-                {
-                    isTouchingWall = true;
-                    wallDirection = (contact.normal.x > 0f) ? -1 : 1;
-                    return; // don't let it count as ground
-                }
+                //if (Mathf.Abs(contact.normal.x) > 0.5f)
+               // {
+                  //  isTouchingWall = true;
+                  //  wallDirection = (contact.normal.x > 0f) ? -1 : 1;
+                  //  return; // don't let it count as ground
+               // }
 
                 if (contact.normal.y > 0.5f)
                 {
