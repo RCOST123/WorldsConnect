@@ -2317,11 +2317,11 @@ MonoBehaviour:
   heartSpacing: 2
   heartScale: 0.25
   keyPrefab: {fileID: 1538709230971927762, guid: 5f0209aff3a7b42aa954529c6e553462, type: 3}
-  keyStartOffsetX: 16
-  keyStartOffsetY: 8
-  keySpacing: 2
-  keyScale: 0.25
-  playerController: {fileID: 597587790}
+  keyStartOffsetX: 8
+  keyStartOffsetY: 4
+  keySpacing: 1
+  keyScale: 0.5
+  playerController: {fileID: 0}
 --- !u!1001 &519554793
 PrefabInstance:
   m_ObjectHideFlags: 0
