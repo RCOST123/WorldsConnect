@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
@@ -50,10 +51,10 @@ public class PlayerController : MonoBehaviour
     {
         if (currentKeys < maxKeys)
             currentKeys++;
-            Debug.LogError("addkey works!");
+        Debug.LogError("addkey works!");
     }
-    public PlayerController playerController; 
 
+    public PlayerController playerController;
 
     // Components
     private Rigidbody2D rb;
@@ -66,7 +67,7 @@ public class PlayerController : MonoBehaviour
 
     // Wall detection
     private bool isTouchingWall;
-    private int wallDirection; // -1 = left wall, +1 = right wall
+    private int wallDirection;
 
     // Wall grab state
     private bool isWallGrabbing;
@@ -76,7 +77,6 @@ public class PlayerController : MonoBehaviour
     private bool hasExtraJump;
     private bool extraJumpAvailable;
     private bool hasDash;
-    private bool canDash;
     private bool hasClaws;
 
     // Dash state
@@ -118,16 +118,13 @@ public class PlayerController : MonoBehaviour
         }
 
         if (hasWaterBalloon && Input.GetKeyDown(KeyCode.E))
-        {
             ThrowWaterBalloon();
-        }
 
         float moveInput = Input.GetAxisRaw("Horizontal");
 
         if (moveInput != 0f)
             facingDirection = Mathf.Sign(moveInput);
 
-        // release from wall if moving away
         if (isTouchingWall)
         {
             bool movingAway = (wallDirection == 1 && moveInput < 0f) || (wallDirection == -1 && moveInput > 0f);
@@ -138,7 +135,6 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        //prevent pressing into wall
         if (isTouchingWall)
         {
             bool pressingIntoWall = (wallDirection == 1 && moveInput > 0f) || (wallDirection == -1 && moveInput < 0f);
@@ -147,9 +143,7 @@ public class PlayerController : MonoBehaviour
         }
 
         if (!isWallGrabbing)
-        {
             rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
-        }
 
         if (Input.GetButtonDown("Jump"))
         {
@@ -202,13 +196,9 @@ public class PlayerController : MonoBehaviour
         {
             wallGrabTimer -= Time.deltaTime;
             if (wallGrabTimer <= 0f)
-            {
                 rb.gravityScale = initialGravityScale * wallSlideGravity;
-            }
             else
-            {
                 rb.linearVelocity = Vector2.zero;
-            }
         }
     }
 
@@ -221,7 +211,6 @@ public class PlayerController : MonoBehaviour
             AudioSource.PlayClipAtPoint(keySound, transform.position);
             Destroy(other.gameObject);
             AddKey();
-
         }
     }
 
@@ -283,64 +272,72 @@ public class PlayerController : MonoBehaviour
     {
         switch (skill)
         {
-            case SkillType.Wings:
-                hasExtraJump = true; extraJumpAvailable = true; break;
-            case SkillType.Claws:
-                hasClaws = true; break;
-            case SkillType.Dash:
-                hasDash = true; break;
-            case SkillType.WaterBalloon:
-                hasWaterBalloon = true; break;
+            case SkillType.Wings: hasExtraJump = true; extraJumpAvailable = true; break;
+            case SkillType.Claws: hasClaws = true; break;
+            case SkillType.Dash: hasDash = true; break;
+            case SkillType.WaterBalloon: hasWaterBalloon = true; break;
         }
         Debug.Log(skill + " unlocked!");
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        // Handle ground/platform contacts
-        if (collision.gameObject.CompareTag("Ground") || 
-            collision.gameObject.CompareTag("Platform") || 
-            collision.gameObject.CompareTag("UnsafePlatform"))
+        if (collision.collider.CompareTag("Platform") || collision.collider.CompareTag("Ground") || collision.collider.CompareTag("UnsafePlatform"))
         {
+            bool foundGround = false;
+
             foreach (var contact in collision.contacts)
             {
-                //if (Mathf.Abs(contact.normal.x) > 0.5f)
-               // {
-                  //  isTouchingWall = true;
-                  //  wallDirection = (contact.normal.x > 0f) ? -1 : 1;
-                  //  return; // don't let it count as ground
-               // }
-
+                // grounded
                 if (contact.normal.y > 0.5f)
                 {
-                    float impactSpeed = Mathf.Abs(lastYVelocity);
-                    if (!isGrounded && impactSpeed > fallDamageThreshold)
-                    {
-                        TakeDamage(1);
-                        Debug.Log("Impact speed: " + impactSpeed.ToString("F1"));
-                    }
-
+                    foundGround = true;
                     isGrounded = true;
                     extraJumpAvailable = true;
+
+                    float impactSpeed = Mathf.Abs(lastYVelocity);
+                    if (!isGrounded && impactSpeed > fallDamageThreshold)
+                        TakeDamage(1);
 
                     if (collision.gameObject.CompareTag("Platform"))
                     {
                         lastPlatformPosition = transform.position;
                         hasValidRespawnPoint = true;
-                        Debug.Log("Respawn point saved at: " + lastPlatformPosition);
                     }
 
                     rb.gravityScale = initialGravityScale;
-                    break;
+                }
+
+                // Side contact
+                if (Mathf.Abs(contact.normal.x) > 0.5f && contact.normal.y < 0.2f)
+                {
+                    bool pushingIntoWall = Mathf.Abs(rb.linearVelocity.x) < 0.1f;
+
+                    if (pushingIntoWall)
+                    {
+                        isTouchingWall = true;
+                        wallDirection = (contact.normal.x > 0f) ? -1 : 1;
+                    }
+                    else
+                    {
+                        // Player is still moving
+                        isTouchingWall = false;
+                    }
                 }
             }
-        }
-        else if (collision.gameObject.CompareTag("Enemy"))
-        {
-            TakeDamage(1);
+
+            if (foundGround)
+                return;
         }
 
-        // Handle actual walls
+        // Enemy Collision
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            TakeDamage(1);
+            return;
+        }
+
+        // Real wal collisions
         if (collision.gameObject.CompareTag("Wall"))
         {
             isTouchingWall = true;
@@ -368,7 +365,6 @@ public class PlayerController : MonoBehaviour
     {
         currentHearts -= amount;
         currentHearts = Mathf.Max(currentHearts, 0);
-        Debug.Log("Damage taken! Hearts left: " + currentHearts);
         AudioSource.PlayClipAtPoint(heartSound, transform.position);
 
         if (currentHearts <= 0)
@@ -407,7 +403,5 @@ public class PlayerController : MonoBehaviour
     {
         currentHearts -= amount;
         currentHearts = Mathf.Max(currentHearts, 0);
-        Debug.Log("Hearts left: " + currentHearts);
     }
-    
 }
