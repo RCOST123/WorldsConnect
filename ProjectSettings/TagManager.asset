@@ -15,8 +15,8 @@ TagManager:
   - UnsafePlatform
   - lava_trigger
   - Lava
-  - Temp_Wall
-  - Temp_Platform
+  - walluptrigger
+  - walldowntrigger
   layers:
   - Default
   - TransparentFX
