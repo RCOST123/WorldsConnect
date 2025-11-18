@@ -5124,7 +5124,7 @@ MonoBehaviour:
   pointA: {fileID: 1120575034}
   pointB: {fileID: 877598244}
   speed: 2
-  chirpSound: {fileID: 0}
+  chirpSound: {fileID: 8300000, guid: b01eb9ddb07ae421e9d4126806c352c1, type: 3}
 --- !u!1001 &1122331106
 PrefabInstance:
   m_ObjectHideFlags: 0
