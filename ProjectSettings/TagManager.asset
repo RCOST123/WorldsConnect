@@ -17,6 +17,9 @@ TagManager:
   - Lava
   - walluptrigger
   - walldowntrigger
+  - Temp_Wall
+  - UnlockedDoor
+  - Hidden_Wall
   layers:
   - Default
   - TransparentFX

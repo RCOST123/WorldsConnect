@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -8,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 12f;
     public float dashForce = 15f;
     public float wallJumpHorizontalPush = 5f;
+    public string losingscreen = "Lose_Scene";
 
     [Header("Fall Damage Settings")]
     public float fallDamageThreshold = 15f;
@@ -40,6 +43,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip wingSound;
     public AudioClip heartSound;
     public AudioClip keySound;
+    public AudioClip deathsound;
 
     [Header("Key settings")]
     public int maxKeys = 3;
@@ -156,6 +160,11 @@ public class PlayerController : MonoBehaviour
             {
                 if (hasClaws && isTouchingWall)
                     WallJump();
+            }
+            else if (isTouchingWall && !hasClaws)
+            {
+                Jump();
+                AudioSource.PlayClipAtPoint(woodSound, transform.position);
             }
             else if (hasExtraJump && extraJumpAvailable)
             {
@@ -291,10 +300,7 @@ public class PlayerController : MonoBehaviour
                 // grounded
                 if (contact.normal.y > 0.5f)
                 {
-                    foundGround = true;
-                    isGrounded = true;
-                    extraJumpAvailable = true;
-
+                    ///moved from here
                     float impactSpeed = Mathf.Abs(lastYVelocity);
                     if (!isGrounded && impactSpeed > fallDamageThreshold)
                         TakeDamage(1);
@@ -304,7 +310,9 @@ public class PlayerController : MonoBehaviour
                         lastPlatformPosition = transform.position;
                         hasValidRespawnPoint = true;
                     }
-
+                    foundGround = true;
+                    isGrounded = true;
+                    extraJumpAvailable = true;
                     rb.gravityScale = initialGravityScale;
                 }
 
@@ -351,10 +359,10 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Platform"))
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Platform") || collision.gameObject.CompareTag("UnsafePlatform"))
             isGrounded = false;
 
-        if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Platform"))
+        if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Platform") || collision.collider.CompareTag("UnsafePlatform"))
         {
             isTouchingWall = false;
             StopWallGrab();
@@ -396,7 +404,11 @@ public class PlayerController : MonoBehaviour
     private void Die()
     {
         Debug.Log("Game Over!");
+        AudioSource.PlayClipAtPoint(deathsound, transform.position);
+        Time.timeScale = 1f;
         Destroy(gameObject);
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(losingscreen);
     }
 
     private void LoseHeart(int amount)
