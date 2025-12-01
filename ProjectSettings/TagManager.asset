@@ -28,7 +28,7 @@ TagManager:
   - Water
   - UI
   - PLAYER
-  - 
+  - Hearts_Keys
   - 
   - 
   - 
@@ -59,6 +59,9 @@ TagManager:
     locked: 0
   - name: BACKGROUND
     uniqueID: 1113876429
+    locked: 0
+  - name: Branches
+    uniqueID: 3406091755
     locked: 0
   - name: Trees
     uniqueID: 3020493923
