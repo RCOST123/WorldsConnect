@@ -57,6 +57,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: FillerGraphic
+    uniqueID: 3225081497
+    locked: 0
   - name: BACKGROUND
     uniqueID: 1113876429
     locked: 0
