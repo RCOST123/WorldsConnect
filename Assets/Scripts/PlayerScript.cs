@@ -149,28 +149,43 @@ public class PlayerController : MonoBehaviour
         if (!isWallGrabbing)
             rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump"))//||Input.GetKeyDown(KeyCode.JoystickButton0))
         {
+            /////////////ISSUE AREA FOR JUMP BREAK, FIX ASAP
+            Debug.Log("Jump Pressed");
             if (isGrounded)
             {
                 Jump();
                 AudioSource.PlayClipAtPoint(woodSound, transform.position);
+                Debug.Log("SHOULD JUMP1");
             }
-            else if (isWallGrabbing || (hasClaws && isTouchingWall))
+            else if ((hasClaws && isTouchingWall) && (isGrounded))
             {
+                WallJump();
+                Debug.Log("SHOULD WALLJUMP9");
+            }
+            //Debug.Log("Wall Jump Pressed");
+            else if ((isWallGrabbing) || (hasClaws && isTouchingWall))
+            {
+                Debug.Log("Wall Jump Pre");
                 if (hasClaws && isTouchingWall)
-                    WallJump();
+                {
+                   WallJump();
+                    Debug.Log("SHOULD WALLJUMP1"); 
+                }
             }
-            else if (isTouchingWall && !hasClaws)
-            {
-                Jump();
-                AudioSource.PlayClipAtPoint(woodSound, transform.position);
-            }
+          //  else if (isTouchingWall && !hasClaws)
+            //{
+              ///  Jump();
+                //AudioSource.PlayClipAtPoint(woodSound, transform.position);
+                //Debug.Log("SHOULD JUMP2");
+           // }
             else if (hasExtraJump && extraJumpAvailable)
             {
                 Jump();
                 AudioSource.PlayClipAtPoint(wingSound, transform.position);
                 extraJumpAvailable = false;
+                Debug.Log("SHOULD JUMP3");
             }
         }
 
@@ -237,6 +252,7 @@ public class PlayerController : MonoBehaviour
     {
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         isGrounded = false;
+        Debug.Log("Not Grounded1");
     }
 
     private void WallJump()
@@ -248,6 +264,7 @@ public class PlayerController : MonoBehaviour
         rb.gravityScale = initialGravityScale;
         extraJumpAvailable = true;
         isGrounded = false;
+        Debug.Log("Not GROUNDED2");
         wallJumpActive = true;
         wallJumpEndTime = Time.time + 0.15f;
     }
@@ -294,6 +311,19 @@ public class PlayerController : MonoBehaviour
         if (collision.collider.CompareTag("Platform") || collision.collider.CompareTag("Ground") || collision.collider.CompareTag("UnsafePlatform"))
         {
             bool foundGround = false;
+            Debug.Log("no ground found1.1");
+            if (collision.collider.CompareTag("Platform"))
+            {
+                Debug.Log("collide platform");
+            }
+            else if (collision.collider.CompareTag("Ground"))
+            {
+                Debug.Log("collide ground");
+            }
+            else if (collision.collider.CompareTag("UnsafePlatform"))
+            {
+                Debug.Log("collide unsafe platform");
+            }
 
             foreach (var contact in collision.contacts)
             {
@@ -312,8 +342,34 @@ public class PlayerController : MonoBehaviour
                     }
                     foundGround = true;
                     isGrounded = true;
+                    Debug.Log("is grounded1");
                     extraJumpAvailable = true;
                     rb.gravityScale = initialGravityScale;
+                    if (collision.collider.CompareTag("Wall")&& (collision.collider.CompareTag("Ground"))
+                    || (collision.collider.CompareTag("Wall")&& (collision.collider.CompareTag("Platform"))
+                    || ((collision.collider.CompareTag("Wall") && collision.collider.CompareTag("UnsafePlatform")))))
+                    {
+                        isTouchingWall = true;
+                        isGrounded = true;
+                        Debug.Log("is grounded7");
+                        Debug.Log("is touchingwall7");
+                    }
+                    //if (Input.GetButtonDown("Jump"))
+                   /// {
+                   /// Jump();
+                    ///AudioSource.PlayClipAtPoint(woodSound, transform.position);
+                    ///Debug.Log("SHOULD JUMP2.5");
+                    ///}
+                }
+                /////////TRYING SOMETHING
+                else
+                {
+                    if (Input.GetButtonDown("Jump"))
+                    {
+                    Jump();
+                    AudioSource.PlayClipAtPoint(woodSound, transform.position);
+                    Debug.Log("SHOULD JUMP2.2");
+                    }
                 }
 
                 // Side contact
@@ -337,6 +393,12 @@ public class PlayerController : MonoBehaviour
             if (foundGround)
                 return;
         }
+        else if (collision.collider.CompareTag("Wall"))
+            {
+                ///trying something
+                Debug.Log("collide wall");
+                isTouchingWall = true;
+            }
 
         // Enemy Collision
         if (collision.gameObject.CompareTag("Enemy"))
@@ -359,12 +421,16 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Platform") || collision.gameObject.CompareTag("UnsafePlatform"))
-            isGrounded = false;
+       // if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Platform") || collision.gameObject.CompareTag("UnsafePlatform"))
+         //   isGrounded = false;
+           // Debug.Log("Not Grounded4");
+            //Debug.Log("No longer in contact with " + collision.transform.name);
 
-        if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Platform") || collision.collider.CompareTag("UnsafePlatform"))
+        if ((collision.gameObject.CompareTag("Wall")) || (collision.gameObject.CompareTag("Platform")) || (collision.collider.CompareTag("UnsafePlatform"))|| (collision.gameObject.CompareTag("Ground")))
         {
             isTouchingWall = false;
+            isGrounded = true;
+            Debug.Log("IS Grounded9");
             StopWallGrab();
         }
     }
@@ -386,13 +452,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void RespawnAtLastPlatform()
+    void RespawnAtLastPlatform()
     {
         if (hasValidRespawnPoint)
         {
             transform.position = lastPlatformPosition;
             rb.linearVelocity = Vector2.zero;
             isGrounded = false;
+            Debug.Log("not grounded5");
             isTouchingWall = false;
             isWallGrabbing = false;
             isDashing = false;
@@ -401,7 +468,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void Die()
+    void Die()
     {
         Debug.Log("Game Over!");
         AudioSource.PlayClipAtPoint(deathsound, transform.position);
@@ -411,7 +478,7 @@ public class PlayerController : MonoBehaviour
         SceneManager.LoadScene(losingscreen);
     }
 
-    private void LoseHeart(int amount)
+    void LoseHeart(int amount)
     {
         currentHearts -= amount;
         currentHearts = Mathf.Max(currentHearts, 0);
