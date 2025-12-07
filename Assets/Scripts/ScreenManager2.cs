@@ -10,9 +10,9 @@ public class ScreenManagerlevels : MonoBehaviour
     public Button leftbutton, middlebutton, rightbutton;
 
     [Header("Scene Names")]
-    public string leftsceneName = "left"; // your main level scene
-    public string middlesceneName = "middle"; // your main level scene
-    public string rightsceneName = "right";     // your main menu scene
+    public string leftsceneName = "left";
+    public string middlesceneName = "middle";
+    public string rightsceneName = "right";
 
     void Start()
     {

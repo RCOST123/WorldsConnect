@@ -17,6 +17,9 @@ TagManager:
   - Lava
   - walluptrigger
   - walldowntrigger
+  - Temp_Wall
+  - UnlockedDoor
+  - Hidden_Wall
   layers:
   - Default
   - TransparentFX
@@ -25,7 +28,7 @@ TagManager:
   - Water
   - UI
   - PLAYER
-  - 
+  - Hearts_Keys
   - 
   - 
   - 
@@ -54,8 +57,14 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: FillerGraphic
+    uniqueID: 3225081497
+    locked: 0
   - name: BACKGROUND
     uniqueID: 1113876429
+    locked: 0
+  - name: Branches
+    uniqueID: 3406091755
     locked: 0
   - name: Trees
     uniqueID: 3020493923

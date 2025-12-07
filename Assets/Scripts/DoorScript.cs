@@ -11,7 +11,7 @@ public class DoorController : MonoBehaviour
     void Start()
     {
         player = FindFirstObjectByType<PlayerController>();
-       unlocked_door.SetActive(false);
+        unlocked_door.SetActive(false);
     }
 
     void Update()
