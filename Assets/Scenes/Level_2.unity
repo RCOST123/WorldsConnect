@@ -4778,15 +4778,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3802164713785046787, guid: 05a24fd238e51489983799af38a02783, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.6
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 3802164713785046787, guid: 05a24fd238e51489983799af38a02783, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.6
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 3802164713785046787, guid: 05a24fd238e51489983799af38a02783, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.6
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 3802164713785046787, guid: 05a24fd238e51489983799af38a02783, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5086,8 +5086,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 3.04, y: 7.45}
+  m_Offset: {x: 0.07575607, y: 0.30301666}
+  m_Size: {x: 5.0096207, y: 13.813461}
   m_Direction: 0
 --- !u!4 &206512343 stripped
 Transform:
@@ -9597,7 +9597,7 @@ MonoBehaviour:
   keyStartOffsetX: 16
   keyStartOffsetY: 8
   keySpacing: 2
-  keyScale: 0.4
+  keyScale: 0.25
   playerController: {fileID: 597587790}
 --- !u!1001 &519554793
 PrefabInstance:
@@ -17599,15 +17599,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3802164713785046787, guid: 05a24fd238e51489983799af38a02783, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.6
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 3802164713785046787, guid: 05a24fd238e51489983799af38a02783, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.6
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 3802164713785046787, guid: 05a24fd238e51489983799af38a02783, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.6
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 3802164713785046787, guid: 05a24fd238e51489983799af38a02783, type: 3}
       propertyPath: m_LocalPosition.x
@@ -39266,15 +39266,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3802164713785046787, guid: 05a24fd238e51489983799af38a02783, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.6
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 3802164713785046787, guid: 05a24fd238e51489983799af38a02783, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.6
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 3802164713785046787, guid: 05a24fd238e51489983799af38a02783, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.6
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 3802164713785046787, guid: 05a24fd238e51489983799af38a02783, type: 3}
       propertyPath: m_LocalPosition.x

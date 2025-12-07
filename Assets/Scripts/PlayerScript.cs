@@ -149,7 +149,7 @@ public class PlayerController : MonoBehaviour
         if (!isWallGrabbing)
             rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
 
-        if (Input.GetButtonDown("Jump"))//||Input.GetKeyDown(KeyCode.JoystickButton0))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button3)||Input.GetButtonDown("Jump"))//Fixed, jump works on controller and keyboard
         {
             /////////////ISSUE AREA FOR JUMP BREAK, FIX ASAP
             Debug.Log("Jump Pressed");
