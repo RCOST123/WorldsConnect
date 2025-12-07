@@ -421,18 +421,21 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D collision)
     {
-       // if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Platform") || collision.gameObject.CompareTag("UnsafePlatform"))
-         //   isGrounded = false;
-           // Debug.Log("Not Grounded4");
-            //Debug.Log("No longer in contact with " + collision.transform.name);
-
-        if ((collision.gameObject.CompareTag("Wall")) || (collision.gameObject.CompareTag("Platform")) || (collision.collider.CompareTag("UnsafePlatform"))|| (collision.gameObject.CompareTag("Ground")))
-        {
-            isTouchingWall = false;
-            isGrounded = true;
-            Debug.Log("IS Grounded9");
-            StopWallGrab();
-        }
+    // Check if we are leaving a valid ground/wall object
+    if ((collision.gameObject.CompareTag("Wall")) || 
+        (collision.gameObject.CompareTag("Platform")) || 
+        (collision.collider.CompareTag("UnsafePlatform")) || 
+        (collision.gameObject.CompareTag("Ground")))
+    {
+        isTouchingWall = false;
+        
+        // --- FIX IS HERE ---
+        isGrounded = false; // We just left the ground, so we are NOT grounded!
+        // -------------------
+        
+        Debug.Log("Not Grounded (Exit)"); // Updated log for clarity
+        StopWallGrab();
+    }
     }
 
     public void TakeDamage(int amount)
