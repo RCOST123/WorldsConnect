@@ -149,7 +149,7 @@ public class PlayerController : MonoBehaviour
         if (!isWallGrabbing)
             rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
 
-        if (Input.GetButtonDown("Jump"))//||Input.GetKeyDown(KeyCode.JoystickButton0))
+        if (Input.GetButtonDown("Jump")||Input.GetKeyDown(KeyCode.JoystickButton0))
         {
             /////////////ISSUE AREA FOR JUMP BREAK, FIX ASAP
             Debug.Log("Jump Pressed");
@@ -159,11 +159,11 @@ public class PlayerController : MonoBehaviour
                 AudioSource.PlayClipAtPoint(woodSound, transform.position);
                 Debug.Log("SHOULD JUMP1");
             }
-            else if ((hasClaws && isTouchingWall) && (isGrounded))
-            {
-                WallJump();
-                Debug.Log("SHOULD WALLJUMP9");
-            }
+            //else if ((hasClaws && isTouchingWall) && (isGrounded)|| (hasClaws && isTouchingWall))
+            //{
+              //  WallJump();
+                //Debug.Log("SHOULD WALLJUMP9");
+           // }
             //Debug.Log("Wall Jump Pressed");
             else if ((isWallGrabbing) || (hasClaws && isTouchingWall))
             {
@@ -345,7 +345,7 @@ public class PlayerController : MonoBehaviour
                     Debug.Log("is grounded1");
                     extraJumpAvailable = true;
                     rb.gravityScale = initialGravityScale;
-                    if (collision.collider.CompareTag("Wall")&& (collision.collider.CompareTag("Ground"))
+                    if ((collision.collider.CompareTag("Wall")&& (collision.collider.CompareTag("Ground")))
                     || (collision.collider.CompareTag("Wall")&& (collision.collider.CompareTag("Platform"))
                     || ((collision.collider.CompareTag("Wall") && collision.collider.CompareTag("UnsafePlatform")))))
                     {
@@ -362,15 +362,15 @@ public class PlayerController : MonoBehaviour
                     ///}
                 }
                 /////////TRYING SOMETHING
-                else
-                {
-                    if (Input.GetButtonDown("Jump"))
-                    {
-                    Jump();
-                    AudioSource.PlayClipAtPoint(woodSound, transform.position);
-                    Debug.Log("SHOULD JUMP2.2");
-                    }
-                }
+                ///else
+                ///{
+                   /// if (Input.GetButtonDown("Jump"))
+                    //{
+                    //Jump();
+                    //AudioSource.PlayClipAtPoint(woodSound, transform.position);
+                    //Debug.Log("SHOULD JUMP2.2");
+                    //}
+                //}
 
                 // Side contact
                 if (Mathf.Abs(contact.normal.x) > 0.5f && contact.normal.y < 0.2f)
