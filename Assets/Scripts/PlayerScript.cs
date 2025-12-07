@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
     {
         if (currentKeys < maxKeys)
             currentKeys++;
-        Debug.LogError("addkey works!");
+        Debug.Log("addkey works!");
     }
 
     public PlayerController playerController;
@@ -68,6 +68,7 @@ public class PlayerController : MonoBehaviour
     // Ground detection
     private bool isGrounded;
     private float lastYVelocity;
+    private int groundContactCount = 0; // Fix for ghost floor bug
 
     // Wall detection
     private bool isTouchingWall;
@@ -151,41 +152,27 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Joystick1Button3)||Input.GetButtonDown("Jump"))//Fixed, jump works on controller and keyboard
         {
-            /////////////ISSUE AREA FOR JUMP BREAK, FIX ASAP
-            Debug.Log("Jump Pressed");
             if (isGrounded)
             {
                 Jump();
                 AudioSource.PlayClipAtPoint(woodSound, transform.position);
-                Debug.Log("SHOULD JUMP1");
             }
             else if ((hasClaws && isTouchingWall) && (isGrounded))
             {
                 WallJump();
-                Debug.Log("SHOULD WALLJUMP9");
             }
-            //Debug.Log("Wall Jump Pressed");
             else if ((isWallGrabbing) || (hasClaws && isTouchingWall))
             {
-                Debug.Log("Wall Jump Pre");
                 if (hasClaws && isTouchingWall)
                 {
                    WallJump();
-                    Debug.Log("SHOULD WALLJUMP1"); 
                 }
             }
-          //  else if (isTouchingWall && !hasClaws)
-            //{
-              ///  Jump();
-                //AudioSource.PlayClipAtPoint(woodSound, transform.position);
-                //Debug.Log("SHOULD JUMP2");
-           // }
             else if (hasExtraJump && extraJumpAvailable)
             {
                 Jump();
                 AudioSource.PlayClipAtPoint(wingSound, transform.position);
                 extraJumpAvailable = false;
-                Debug.Log("SHOULD JUMP3");
             }
         }
 
@@ -252,7 +239,7 @@ public class PlayerController : MonoBehaviour
     {
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         isGrounded = false;
-        Debug.Log("Not Grounded1");
+        // Don't reset groundContactCount here; OnCollisionExit handles it
     }
 
     private void WallJump()
@@ -264,7 +251,6 @@ public class PlayerController : MonoBehaviour
         rb.gravityScale = initialGravityScale;
         extraJumpAvailable = true;
         isGrounded = false;
-        Debug.Log("Not GROUNDED2");
         wallJumpActive = true;
         wallJumpEndTime = Time.time + 0.15f;
     }
@@ -308,31 +294,24 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Platform") || collision.collider.CompareTag("Ground") || collision.collider.CompareTag("UnsafePlatform"))
+        // Detect floors
+        bool isFloor = collision.collider.CompareTag("Platform") || 
+                       collision.collider.CompareTag("Ground") || 
+                       collision.collider.CompareTag("UnsafePlatform");
+
+        if (isFloor)
         {
-            bool foundGround = false;
-            Debug.Log("no ground found1.1");
-            if (collision.collider.CompareTag("Platform"))
-            {
-                Debug.Log("collide platform");
-            }
-            else if (collision.collider.CompareTag("Ground"))
-            {
-                Debug.Log("collide ground");
-            }
-            else if (collision.collider.CompareTag("UnsafePlatform"))
-            {
-                Debug.Log("collide unsafe platform");
-            }
+            groundContactCount++;
+            isGrounded = true;
+            extraJumpAvailable = true;
+            rb.gravityScale = initialGravityScale;
 
             foreach (var contact in collision.contacts)
             {
-                // grounded
                 if (contact.normal.y > 0.5f)
                 {
-                    ///moved from here
                     float impactSpeed = Mathf.Abs(lastYVelocity);
-                    if (!isGrounded && impactSpeed > fallDamageThreshold)
+                    if (impactSpeed > fallDamageThreshold)
                         TakeDamage(1);
 
                     if (collision.gameObject.CompareTag("Platform"))
@@ -340,74 +319,17 @@ public class PlayerController : MonoBehaviour
                         lastPlatformPosition = transform.position;
                         hasValidRespawnPoint = true;
                     }
-                    foundGround = true;
-                    isGrounded = true;
-                    Debug.Log("is grounded1");
-                    extraJumpAvailable = true;
-                    rb.gravityScale = initialGravityScale;
-                    if (collision.collider.CompareTag("Wall")&& (collision.collider.CompareTag("Ground"))
-                    || (collision.collider.CompareTag("Wall")&& (collision.collider.CompareTag("Platform"))
-                    || ((collision.collider.CompareTag("Wall") && collision.collider.CompareTag("UnsafePlatform")))))
-                    {
-                        isTouchingWall = true;
-                        isGrounded = true;
-                        Debug.Log("is grounded7");
-                        Debug.Log("is touchingwall7");
-                    }
-                    //if (Input.GetButtonDown("Jump"))
-                   /// {
-                   /// Jump();
-                    ///AudioSource.PlayClipAtPoint(woodSound, transform.position);
-                    ///Debug.Log("SHOULD JUMP2.5");
-                    ///}
-                }
-                /////////TRYING SOMETHING
-                else
-                {
-                    if (Input.GetButtonDown("Jump"))
-                    {
-                    Jump();
-                    AudioSource.PlayClipAtPoint(woodSound, transform.position);
-                    Debug.Log("SHOULD JUMP2.2");
-                    }
-                }
-
-                // Side contact
-                if (Mathf.Abs(contact.normal.x) > 0.5f && contact.normal.y < 0.2f)
-                {
-                    bool pushingIntoWall = Mathf.Abs(rb.linearVelocity.x) < 0.1f;
-
-                    if (pushingIntoWall)
-                    {
-                        isTouchingWall = true;
-                        wallDirection = (contact.normal.x > 0f) ? -1 : 1;
-                    }
-                    else
-                    {
-                        // Player is still moving
-                        isTouchingWall = false;
-                    }
                 }
             }
-
-            if (foundGround)
-                return;
         }
-        else if (collision.collider.CompareTag("Wall"))
-            {
-                ///trying something
-                Debug.Log("collide wall");
-                isTouchingWall = true;
-            }
 
         // Enemy Collision
         if (collision.gameObject.CompareTag("Enemy"))
         {
             TakeDamage(1);
-            return;
         }
 
-        // Real wal collisions
+        // Wall Collision
         if (collision.gameObject.CompareTag("Wall"))
         {
             isTouchingWall = true;
@@ -421,16 +343,26 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D collision)
     {
-       // if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Platform") || collision.gameObject.CompareTag("UnsafePlatform"))
-         //   isGrounded = false;
-           // Debug.Log("Not Grounded4");
-            //Debug.Log("No longer in contact with " + collision.transform.name);
+        // Detect floors
+        bool isFloor = collision.gameObject.CompareTag("Platform") || 
+                       collision.gameObject.CompareTag("Ground") || 
+                       collision.collider.CompareTag("UnsafePlatform");
 
-        if ((collision.gameObject.CompareTag("Wall")) || (collision.gameObject.CompareTag("Platform")) || (collision.collider.CompareTag("UnsafePlatform"))|| (collision.gameObject.CompareTag("Ground")))
+        if (isFloor)
+        {
+            groundContactCount--;
+            
+            // Only unground if touching 0 floors
+            if (groundContactCount <= 0)
+            {
+                isGrounded = false;
+                groundContactCount = 0;
+            }
+        }
+
+        if (collision.gameObject.CompareTag("Wall"))
         {
             isTouchingWall = false;
-            isGrounded = true;
-            Debug.Log("IS Grounded9");
             StopWallGrab();
         }
     }
@@ -458,8 +390,10 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = lastPlatformPosition;
             rb.linearVelocity = Vector2.zero;
+            
             isGrounded = false;
-            Debug.Log("not grounded5");
+            groundContactCount = 0; // Reset counter on respawn
+            
             isTouchingWall = false;
             isWallGrabbing = false;
             isDashing = false;

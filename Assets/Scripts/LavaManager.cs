@@ -21,9 +21,16 @@ public class LavaManager : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        currentRiseSpeed = baseRiseSpeed;
-        transform.position = new Vector3(player.position.x, player.position.y - 20f, 0); // start offscreen
+        GameObject p = GameObject.FindGameObjectWithTag("Player");
+        if (p != null)
+        {
+            player = p.transform;
+            currentRiseSpeed = baseRiseSpeed;
+            
+            // CHANGED: Use transform.position.x instead of player.position.x
+            // This keeps the lava where you placed it in the editor horizontally
+            transform.position = new Vector3(transform.position.x, player.position.y - 20f, 0); 
+        }
     }
 
     void Update()
@@ -58,24 +65,32 @@ public class LavaManager : MonoBehaviour
 
     public void ResetLavaBelowPlayer(Vector3 playerPos)
     {
-        transform.position = new Vector3(playerPos.x, playerPos.y - safeOffset, transform.position.z);
+        // CHANGED: We now use 'transform.position.x' (Lava's X) 
+        // instead of 'playerPos.x' (Player's X).
+        transform.position = new Vector3(transform.position.x, playerPos.y - safeOffset, transform.position.z);
+        
         StopLavaTemporarily();
     }
 
     public void SlowLava()
     {
         if (slowing) return;
-        StartCoroutine(SlowLavaCoroutine());
+        StartCoroutine(SlowLavaRoutine());
     }
 
-    private IEnumerator SlowLavaCoroutine()
+    private IEnumerator SlowLavaRoutine()
     {
         slowing = true;
-        float oldSpeed = currentRiseSpeed;
-        currentRiseSpeed = baseRiseSpeed / 2f; // half speed
+        float originalSpeed = currentRiseSpeed;
+        
+        // Slow down
+        currentRiseSpeed = baseRiseSpeed / 4f; 
         Debug.Log("Lava slowed!");
+        
         yield return new WaitForSeconds(3f);
-        currentRiseSpeed = oldSpeed;
+        
+        // Restore speed
+        currentRiseSpeed = baseRiseSpeed; 
         slowing = false;
         Debug.Log("Lava speed restored!");
     }
