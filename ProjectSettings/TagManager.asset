@@ -20,6 +20,7 @@ TagManager:
   - Temp_Wall
   - UnlockedDoor
   - Hidden_Wall
+  - UnsafeWall
   layers:
   - Default
   - TransparentFX
