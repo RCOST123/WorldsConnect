@@ -429,11 +429,10 @@ public class PlayerController : MonoBehaviour
     {
         isTouchingWall = false;
         
-        // --- FIX IS HERE ---
-        isGrounded = false; // We just left the ground, so we are NOT grounded!
-        // -------------------
+        // fix?
+        isGrounded = false;
         
-        Debug.Log("Not Grounded (Exit)"); // Updated log for clarity
+        Debug.Log("Not Grounded (Exit)");
         StopWallGrab();
     }
     }
