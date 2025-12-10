@@ -7,6 +7,12 @@ public class SkillPickup : MonoBehaviour
     public SkillType skillType;
     private bool playerInRange = false;
     private PlayerController playerController;
+    public AudioSource powerupSound;
+
+    void Start()
+    {
+    powerupSound = GameObject.Find("PowerUp_Sound").GetComponent<AudioSource>();
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -36,6 +42,7 @@ public class SkillPickup : MonoBehaviour
             if (playerController != null)
             {
                 playerController.UnlockSkill(skillType);
+                powerupSound.Play();
                 Destroy(gameObject);
                 UIManager.Instance.HidePickupPrompt();
             }

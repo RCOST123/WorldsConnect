@@ -5,13 +5,14 @@ public class EnemyScript : MonoBehaviour
     public Transform pointA;      // first patrol point
     public Transform pointB;      // second patrol point
     public float speed = 2f;      // movement speed
-    public AudioClip chirpSound;
+    ///public AudioSource birdSound;
     private Transform target;     // current target point
 
     void Start()
     {
         // Start moving toward point A first
         target = pointA;
+       // birdSound = GameObject.Find("Bird_Noise").GetComponent<AudioSource>();
     }
 
     void Update()
@@ -29,7 +30,7 @@ public class EnemyScript : MonoBehaviour
         if (Vector2.Distance(transform.position, target.position) < 0.05f)
         {
             target = target == pointA ? pointB : pointA;
-            AudioSource.PlayClipAtPoint(chirpSound, transform.position);
+            //AudioSource.PlayClipAtPoint(chirpSound, transform.position);
             Flip();
         }
     }

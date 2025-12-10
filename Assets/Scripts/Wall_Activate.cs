@@ -4,8 +4,8 @@ public class Wall_Activate : MonoBehaviour
 {
     [Header("Sounds")]
     public PlayerController player;
-    public AudioClip wallupSound;
-    public AudioClip walldownSound;
+    public AudioSource wallupSound;
+    public AudioSource walldownSound;
     public GameObject wallchangingobject;
     public GameObject walluptrigger;
     public int minkeydown = 2;
@@ -14,6 +14,8 @@ public class Wall_Activate : MonoBehaviour
     void Start()
     {
         wallchangingobject.SetActive(false);
+        wallupSound = GameObject.Find("WallUp_Sound").GetComponent<AudioSource>();
+        walldownSound = GameObject.Find("WallDown_Sound").GetComponent<AudioSource>();
     }
 
     void Update()
@@ -24,7 +26,8 @@ public class Wall_Activate : MonoBehaviour
             wallchangingobject.SetActive(false);
             if (j == 1)
             {
-                AudioSource.PlayClipAtPoint(walldownSound, transform.position);
+                walldownSound.Play();
+                //AudioSource.PlayClipAtPoint(walldownSound, transform.position);
                 j = j - 1;
             }
         }
@@ -33,7 +36,8 @@ public class Wall_Activate : MonoBehaviour
     {
         if (other.CompareTag("walluptrigger"))
         {
-            AudioSource.PlayClipAtPoint(wallupSound, transform.position);
+            //AudioSource.PlayClipAtPoint(wallupSound, transform.position);
+            wallupSound.Play();
             wallchangingobject.SetActive(true);
             Destroy(walluptrigger);
         }

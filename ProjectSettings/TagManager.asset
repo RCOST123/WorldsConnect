@@ -20,6 +20,9 @@ TagManager:
   - Temp_Wall
   - UnlockedDoor
   - Hidden_Wall
+  - UnsafeWall
+  - BirdEnemy
+  - BatEnemy
   layers:
   - Default
   - TransparentFX
@@ -56,6 +59,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: FillerGraphic
+    uniqueID: 3225081497
     locked: 0
   - name: BACKGROUND
     uniqueID: 1113876429
