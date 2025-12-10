@@ -22,7 +22,7 @@ public class SkillPickup : MonoBehaviour
         playerController = other.GetComponent<PlayerController>();
 
         Debug.Log("In Range of " + skillType);
-        UIManager.Instance.ShowPickupPrompt("Press W to pick up " + skillType, transform);
+        UIManager.Instance.ShowPickupPrompt("Press X to pick up " + skillType, transform);
     }
 
     void OnTriggerExit2D(Collider2D other)
@@ -37,7 +37,7 @@ public class SkillPickup : MonoBehaviour
 
     void Update()
     {
-        if (playerInRange && Input.GetKeyDown(KeyCode.W))
+        if (playerInRange && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Joystick1Button2)))
         {
             if (playerController != null)
             {
