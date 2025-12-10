@@ -150,7 +150,7 @@ public class PlayerController : MonoBehaviour
         if (!isWallGrabbing)
             rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
 
-        if (Input.GetKeyDown(KeyCode.Joystick1Button3)||Input.GetButtonDown("Jump"))//Fixed, jump works on controller and keyboard
+        if (Input.GetKeyDown(KeyCode.Joystick1Button0)||Input.GetButtonDown("Jump"))//Fixed, jump works on controller and keyboard
         {
             if (isGrounded)
             {
