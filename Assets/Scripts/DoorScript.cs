@@ -6,12 +6,13 @@ public class DoorController : MonoBehaviour
     private PlayerController player;
     private bool doorUnlocked = false;
     public GameObject unlocked_door;
-    public AudioClip doorSound;
+    public AudioSource doorSound;
 
     void Start()
     {
         player = FindFirstObjectByType<PlayerController>();
         unlocked_door.SetActive(false);
+        doorSound = GameObject.Find("Door_Sound").GetComponent<AudioSource>();
     }
 
     void Update()
@@ -28,7 +29,8 @@ public class DoorController : MonoBehaviour
         Debug.Log("Door unlocked!");
         // Animate door, disable collider, load next scene, etc.
         unlocked_door.SetActive(true);
-        AudioSource.PlayClipAtPoint(doorSound, transform.position);
+        doorSound.Play();
+        ///AudioSource.PlayClipAtPoint(doorSound, transform.position);
         Destroy(gameObject); // Or disable the door collider
     }
 }

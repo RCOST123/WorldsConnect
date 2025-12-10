@@ -4,11 +4,12 @@ public class WaterBalloon : MonoBehaviour
 {
     public float lifetime = 3f; // auto-destroy timer
     public GameObject splashEffect; // prefab for splash particle
-    public AudioClip splashSound; // optional sound
+    public AudioSource splashSound; // optional sound
     // private AudioSource audioSource; // Uncomment if you add an AudioSource component
 
     void Start()
     {
+        splashSound = GameObject.Find("Water_Sound").GetComponent<AudioSource>();
         Destroy(gameObject, lifetime);
     }
 
@@ -39,6 +40,7 @@ public class WaterBalloon : MonoBehaviour
         if (splashEffect)
         {
             Instantiate(splashEffect, transform.position, Quaternion.identity);
+            splashSound.Play();
         }
 
         // Play sound logic would go here

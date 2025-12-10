@@ -21,6 +21,8 @@ TagManager:
   - UnlockedDoor
   - Hidden_Wall
   - UnsafeWall
+  - BirdEnemy
+  - BatEnemy
   layers:
   - Default
   - TransparentFX
