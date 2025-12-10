@@ -448,6 +448,7 @@ public class PlayerController : MonoBehaviour
         Time.timeScale = 1f;
         Destroy(gameObject);
         Time.timeScale = 1f;
+        PlayerPrefs.SetString("LastLevel", SceneManager.GetActiveScene().name);
         SceneManager.LoadScene(losingscreen);
     }
 
