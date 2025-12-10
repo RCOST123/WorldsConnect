@@ -39,11 +39,14 @@ public class PlayerController : MonoBehaviour
     private bool hasValidRespawnPoint;
 
     [Header("Sounds")]
-    public AudioClip woodSound;
-    public AudioClip wingSound;
-    public AudioClip heartSound;
-    public AudioClip keySound;
-    public AudioClip deathsound;
+    public AudioSource jumpSound;
+    //public AudioSource doublejumpSound;
+    public AudioSource heartlossSound;
+    public AudioSource keySound;
+    public AudioSource deathSound;
+    public AudioSource walljumpsound;
+    public AudioSource birdSound;
+    public AudioSource batSound;
 
     [Header("Key settings")]
     public int maxKeys = 3;
@@ -99,6 +102,14 @@ public class PlayerController : MonoBehaviour
         initialGravityScale = rb.gravityScale;
         currentHearts = maxHearts;
         keysCollected = 0;
+        jumpSound = GameObject.Find("Jump_Sound").GetComponent<AudioSource>();
+        //doublejumpSound = GameObject.Find("DoubleJump_Sound").GetComponent<AudioSource>();
+        heartlossSound = GameObject.Find("Life_Loss").GetComponent<AudioSource>();
+        keySound = GameObject.Find("Key_Sound").GetComponent<AudioSource>();
+        deathSound = GameObject.Find("Death_Sound").GetComponent<AudioSource>();
+        walljumpsound = GameObject.Find("WallJump_Sound").GetComponent<AudioSource>();
+        birdSound = GameObject.Find("Bird_Noise").GetComponent<AudioSource>();
+        batSound = GameObject.Find("Bat_Sound").GetComponent<AudioSource>();
     }
 
     void Update()
@@ -155,7 +166,8 @@ public class PlayerController : MonoBehaviour
             if (isGrounded)
             {
                 Jump();
-                AudioSource.PlayClipAtPoint(woodSound, transform.position);
+                //jumpSound.Play();
+               // AudioSource.PlayClipAtPoint(woodSound, transform.position);
             }
             else if ((hasClaws && isTouchingWall) && (isGrounded))
             {
@@ -171,7 +183,10 @@ public class PlayerController : MonoBehaviour
             else if (hasExtraJump && extraJumpAvailable)
             {
                 Jump();
-                AudioSource.PlayClipAtPoint(wingSound, transform.position);
+                //jumpSound.Play();
+               // AudioSource.PlayClipAtPoint(wingSound, transform.position);
+                //doublejumpSound.Play();
+                //jumpSound.Play();
                 extraJumpAvailable = false;
             }
         }
@@ -219,7 +234,8 @@ public class PlayerController : MonoBehaviour
         {
             keysCollected++;
             Debug.Log("Key collected! Total keys: " + keysCollected);
-            AudioSource.PlayClipAtPoint(keySound, transform.position);
+            //AudioSource.PlayClipAtPoint(keySound, transform.position);
+            keySound.Play();
             Destroy(other.gameObject);
             AddKey();
         }
@@ -239,6 +255,7 @@ public class PlayerController : MonoBehaviour
     {
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         isGrounded = false;
+        jumpSound.Play();
         // Don't reset groundContactCount here; OnCollisionExit handles it
     }
 
@@ -246,6 +263,7 @@ public class PlayerController : MonoBehaviour
     {
         float pushDirection = -wallDirection;
         rb.linearVelocity = new Vector2(pushDirection * wallJumpHorizontalPush, jumpForce);
+        walljumpsound.Play();
         isWallGrabbing = false;
         isTouchingWall = false;
         rb.gravityScale = initialGravityScale;
@@ -324,10 +342,29 @@ public class PlayerController : MonoBehaviour
         }
 
         // Enemy Collision
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("BirdEnemy"))
         {
             TakeDamage(1);
+            birdSound.Play();
         }
+
+        if (collision.gameObject.CompareTag("BatEnemy"))
+        {
+            TakeDamage(1);
+            batSound.Play();
+        }
+        
+        
+       //if (collision.gameObject.CompareTag("NearBirdEnemy"))
+        //{
+        //    birdSound.Play();
+        //}
+        
+        
+        //if (collision.gameObject.CompareTag("NearBatEnemy"))
+        //{
+           // batSound.Play();
+        //}
 
         // Wall Collision
         if (collision.gameObject.CompareTag("Wall"))
@@ -371,7 +408,8 @@ public class PlayerController : MonoBehaviour
     {
         currentHearts -= amount;
         currentHearts = Mathf.Max(currentHearts, 0);
-        AudioSource.PlayClipAtPoint(heartSound, transform.position);
+        heartlossSound.Play();
+        //AudioSource.PlayClipAtPoint(heartSound, transform.position);
 
         if (currentHearts <= 0)
         {
@@ -405,10 +443,12 @@ public class PlayerController : MonoBehaviour
     void Die()
     {
         Debug.Log("Game Over!");
-        AudioSource.PlayClipAtPoint(deathsound, transform.position);
+        //AudioSource.PlayClipAtPoint(deathsound, transform.position);
+        deathSound.Play();
         Time.timeScale = 1f;
         Destroy(gameObject);
         Time.timeScale = 1f;
+        PlayerPrefs.SetString("LastLevel", SceneManager.GetActiveScene().name);
         SceneManager.LoadScene(losingscreen);
     }
 

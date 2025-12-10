@@ -4,8 +4,15 @@ using UnityEngine.SceneManagement;
 public class LoseScreenManager : MonoBehaviour
 {
     [Header("Scene Names")]
-    public string retrySceneName = "Level_1"; // your main level scene
-    public string menuSceneName = "Menu";     // your main menu scene
+    public string menuSceneName = "Menu"; // your main menu scene
+
+    private string retrySceneName;
+
+    private void Start()
+    {
+        // Get the level we saved in PlayerScript.Die()
+        retrySceneName = PlayerPrefs.GetString("LastLevel", "Level_1");
+    }
 
     public void Retry()
     {

@@ -434,7 +434,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -2002176913
-  m_SortingLayer: 4
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 3095303344709879796, guid: c9b42d46cd6504863af157969b85f0a9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -526,7 +526,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1113876429
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 3423395840219203325, guid: f38fef221932a43b887ef98557a858df, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -754,7 +754,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 878299411
-  m_SortingLayer: 5
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 6929171514242256946, guid: 83df2e5bc558c46a881635911f1cdf8c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -794,8 +794,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38a309ecfdf984a2092b1a4f61cfb138, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MovetoDoorScript
-  nextdoor: {fileID: 639354444}
-  doorpos: {x: 75.48376, y: 26.43681, z: 0}
+  nextsceneName: level
+  winaudio: {fileID: 0}
 --- !u!1 &252962652 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4921320773318176886, guid: 1698fd0b39dd04facbbe7c737f939ea1, type: 3}
@@ -1350,7 +1350,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1113876429
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -3093050420247213164, guid: 9878399d3fd484089b8e29150620d733, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1763,7 +1763,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -2002176913
-  m_SortingLayer: 4
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: -2560333186125116191, guid: 8c41f0594a2d743d8bb52562e6f79fd8, type: 3}
   m_Color: {r: 0.8679245, g: 0.79013884, b: 0.79013884, a: 1}
@@ -1807,16 +1807,20 @@ MonoBehaviour:
   jumpForce: 3
   dashForce: 15
   wallJumpHorizontalPush: 5
+  losingscreen: Lose_Scene
   fallDamageThreshold: 25
   wallGrabDuration: 0.2
   wallSlideGravity: 0.5
   dashDuration: 0.2
   waterBalloonPrefab: {fileID: 0}
   maxHearts: 5
-  woodSound: {fileID: 0}
-  wingSound: {fileID: 0}
-  heartSound: {fileID: 0}
+  jumpSound: {fileID: 0}
+  heartlossSound: {fileID: 0}
   keySound: {fileID: 0}
+  deathSound: {fileID: 0}
+  walljumpsound: {fileID: 0}
+  birdSound: {fileID: 0}
+  batSound: {fileID: 0}
   maxKeys: 3
   playerController: {fileID: 0}
   cameraFollow: {fileID: 519420033}
@@ -1832,8 +1836,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38a309ecfdf984a2092b1a4f61cfb138, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorScript
-  nextdoor: {fileID: 0}
-  doorpos: {x: 7.50722, y: 54.21836, z: 0}
+  nextsceneName: level
+  winaudio: {fileID: 0}
 --- !u!1001 &612984761
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2184,7 +2188,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -2002176913
-  m_SortingLayer: 4
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: -7954318251336294147, guid: ace446cf9ca924bf88393639516fc8ae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2725,7 +2729,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -2002176913
-  m_SortingLayer: 4
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 7124505977463404679, guid: b7f327c1638e74348bf4eeb623d996db, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3507,7 +3511,7 @@ PrefabInstance:
       objectReference: {fileID: 7998445609147043130, guid: 93cc542b250ac4afd98c330bcfd865e4, type: 3}
     - target: {fileID: 1940488819301019188, guid: 5321a2b13fe3e4fa1a9b4dabddcfdb14, type: 3}
       propertyPath: m_SortingLayer
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1940488819301019188, guid: 5321a2b13fe3e4fa1a9b4dabddcfdb14, type: 3}
       propertyPath: m_SortingLayerID
@@ -4642,7 +4646,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1113876429
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -3093050420247213164, guid: 9878399d3fd484089b8e29150620d733, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4785,7 +4789,7 @@ PrefabInstance:
       objectReference: {fileID: 7998445609147043130, guid: 93cc542b250ac4afd98c330bcfd865e4, type: 3}
     - target: {fileID: 1940488819301019188, guid: 5321a2b13fe3e4fa1a9b4dabddcfdb14, type: 3}
       propertyPath: m_SortingLayer
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1940488819301019188, guid: 5321a2b13fe3e4fa1a9b4dabddcfdb14, type: 3}
       propertyPath: m_SortingLayerID
@@ -5386,7 +5390,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -2002176913
-  m_SortingLayer: 4
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 7411588943102096783, guid: ee9f5ea4599fa4ac3a452bdd5f5cfd82, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5573,7 +5577,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -2002176913
-  m_SortingLayer: 4
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: -3153899716525322053, guid: 9b4621c6982e841dbafbb9de2437bf90, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5894,7 +5898,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -2002176913
-  m_SortingLayer: 4
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: -5420537988700103584, guid: ec4fa2b58f5044065be4dcfad65c6829, type: 3}
   m_Color: {r: 1, g: 0.9575472, b: 0.9575472, a: 1}
@@ -6215,7 +6219,7 @@ PrefabInstance:
       objectReference: {fileID: 7998445609147043130, guid: 93cc542b250ac4afd98c330bcfd865e4, type: 3}
     - target: {fileID: 1940488819301019188, guid: 5321a2b13fe3e4fa1a9b4dabddcfdb14, type: 3}
       propertyPath: m_SortingLayer
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1940488819301019188, guid: 5321a2b13fe3e4fa1a9b4dabddcfdb14, type: 3}
       propertyPath: m_SortingLayerID
