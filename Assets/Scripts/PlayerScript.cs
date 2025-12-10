@@ -331,11 +331,15 @@ public class PlayerController : MonoBehaviour
                     float impactSpeed = Mathf.Abs(lastYVelocity);
                     if (impactSpeed > fallDamageThreshold)
                         TakeDamage(1);
+                        rb.linearVelocity = Vector2.zero;
+                        impactSpeed = 0;
 
                     if (collision.gameObject.CompareTag("Platform"))
                     {
                         lastPlatformPosition = transform.position;
                         hasValidRespawnPoint = true;
+                        rb.linearVelocity = Vector2.zero;
+                        impactSpeed = 0;
                     }
                 }
             }
