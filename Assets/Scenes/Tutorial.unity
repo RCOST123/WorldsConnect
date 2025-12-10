@@ -3045,13 +3045,13 @@ MonoBehaviour:
   dashDuration: 0.2
   waterBalloonPrefab: {fileID: 2084291469915349471, guid: e1f75374a91ea495baa24966d35c7c45, type: 3}
   maxHearts: 5
-  jumpSound: {fileID: 0}
-  heartlossSound: {fileID: 0}
-  keySound: {fileID: 8300000, guid: b7adb46dacc514a559ac9d9677f7d488, type: 3}
-  deathSound: {fileID: 0}
-  walljumpsound: {fileID: 0}
-  birdSound: {fileID: 0}
-  batSound: {fileID: 0}
+  jumpSound: {fileID: 1051832017}
+  heartlossSound: {fileID: 917919377}
+  keySound: {fileID: 1147384354}
+  deathSound: {fileID: 24819983}
+  walljumpsound: {fileID: 1445101527}
+  birdSound: {fileID: 364336328}
+  batSound: {fileID: 839242934}
   maxKeys: 1
   playerController: {fileID: 597587790}
   cameraFollow: {fileID: 519420033}
@@ -3067,8 +3067,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38a309ecfdf984a2092b1a4f61cfb138, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorScript
-  nextsceneName: Level_1
-  winaudio: {fileID: 0}
+  nextsceneName: AfterTutorial
+  winaudio: {fileID: 776259945}
 --- !u!1 &611487582
 GameObject:
   m_ObjectHideFlags: 0
@@ -12188,7 +12188,7 @@ PrefabInstance:
     - target: {fileID: 1072003733628844502, guid: a4239a4fc5a3d405ca49f9c3626f68aa, type: 3}
       propertyPath: doorSound
       value: 
-      objectReference: {fileID: 8300000, guid: 8a3007c4e66d349ceb36c5003d9b81d9, type: 3}
+      objectReference: {fileID: 640466764}
     - target: {fileID: 1072003733628844502, guid: a4239a4fc5a3d405ca49f9c3626f68aa, type: 3}
       propertyPath: keysRequired
       value: 1

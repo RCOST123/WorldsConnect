@@ -3087,13 +3087,13 @@ MonoBehaviour:
   dashDuration: 0.2
   waterBalloonPrefab: {fileID: 2084291469915349471, guid: e1f75374a91ea495baa24966d35c7c45, type: 3}
   maxHearts: 5
-  jumpSound: {fileID: 0}
-  heartlossSound: {fileID: 0}
-  keySound: {fileID: 8300000, guid: b7adb46dacc514a559ac9d9677f7d488, type: 3}
-  deathSound: {fileID: 0}
-  walljumpsound: {fileID: 0}
-  birdSound: {fileID: 0}
-  batSound: {fileID: 0}
+  jumpSound: {fileID: 908069384}
+  heartlossSound: {fileID: 1963084629}
+  keySound: {fileID: 289913560}
+  deathSound: {fileID: 348309305}
+  walljumpsound: {fileID: 1736204184}
+  birdSound: {fileID: 647436493}
+  batSound: {fileID: 1943947254}
   maxKeys: 3
   playerController: {fileID: 597587790}
   cameraFollow: {fileID: 519420033}
@@ -3110,7 +3110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorScript
   nextsceneName: BetweenScenes
-  winaudio: {fileID: 0}
+  winaudio: {fileID: 2094528221}
 --- !u!1 &611487582
 GameObject:
   m_ObjectHideFlags: 0
