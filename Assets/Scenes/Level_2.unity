@@ -11922,7 +11922,7 @@ SpriteRenderer:
   m_SortingLayerID: -2002176913
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4708105416770225227, guid: 45b77a9ecec124cf5a0609ff7d9c1d36, type: 3}
+  m_Sprite: {fileID: 4689069912063502354, guid: b7adfe138899348898e8624e076dd05d, type: 3}
   m_Color: {r: 0.8679245, g: 0.79013884, b: 0.79013884, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -11942,7 +11942,7 @@ Transform:
   m_GameObject: {fileID: 597587785}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.4, y: 1, z: 0}
+  m_LocalPosition: {x: 9.69, y: -0.17, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -11971,11 +11971,13 @@ MonoBehaviour:
   dashDuration: 0.2
   waterBalloonPrefab: {fileID: 2084291469915349471, guid: e1f75374a91ea495baa24966d35c7c45, type: 3}
   maxHearts: 5
-  woodSound: {fileID: 8300000, guid: 6598263a4cb134ebcbf838840fcfd5a9, type: 3}
-  wingSound: {fileID: 8300000, guid: ff923ab14a54f4da6a63951ae80c9261, type: 3}
-  heartSound: {fileID: 8300000, guid: 7ea6a222cd5964a4eaa2954d6f3fb294, type: 3}
+  jumpSound: {fileID: 0}
+  heartlossSound: {fileID: 0}
   keySound: {fileID: 8300000, guid: b7adb46dacc514a559ac9d9677f7d488, type: 3}
-  deathsound: {fileID: 8300000, guid: ca5aa8aec02814012a8f3f86dba6f0a3, type: 3}
+  deathSound: {fileID: 0}
+  walljumpsound: {fileID: 0}
+  birdSound: {fileID: 0}
+  batSound: {fileID: 0}
   maxKeys: 3
   playerController: {fileID: 597587790}
   cameraFollow: {fileID: 519420033}
@@ -11992,7 +11994,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorScript
   nextsceneName: Win_Screen
-  successSound: {fileID: 8300000, guid: 73d95f7b9c33d4acda51d92d86b0a7f1, type: 3}
+  winaudio: {fileID: 0}
 --- !u!70 &597587792
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -15001,7 +15003,6 @@ MonoBehaviour:
   pointA: {fileID: 814786790}
   pointB: {fileID: 984797828}
   speed: 2
-  chirpSound: {fileID: 8300000, guid: c36611d826e53435d80f90aa7239f1ff, type: 3}
 --- !u!70 &714273490
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -27477,7 +27478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MovetoDoorScript
   nextsceneName: level
-  successSound: {fileID: 0}
+  winaudio: {fileID: 0}
 --- !u!212 &1304567922
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -32835,7 +32836,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MovetoDoorScript
   nextsceneName: level
-  successSound: {fileID: 0}
+  winaudio: {fileID: 0}
 --- !u!212 &1527292965
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -37508,7 +37509,6 @@ MonoBehaviour:
   pointA: {fileID: 607782246}
   pointB: {fileID: 1840828167}
   speed: 2
-  chirpSound: {fileID: 8300000, guid: c36611d826e53435d80f90aa7239f1ff, type: 3}
 --- !u!70 &1831025839
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -37901,7 +37901,6 @@ MonoBehaviour:
   pointA: {fileID: 1716284787}
   pointB: {fileID: 555920475}
   speed: 2
-  chirpSound: {fileID: 8300000, guid: c36611d826e53435d80f90aa7239f1ff, type: 3}
 --- !u!70 &1848424696
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -41709,7 +41708,6 @@ MonoBehaviour:
   pointA: {fileID: 224638071}
   pointB: {fileID: 1860573461}
   speed: 2
-  chirpSound: {fileID: 8300000, guid: c36611d826e53435d80f90aa7239f1ff, type: 3}
 --- !u!1001 &2120174446
 PrefabInstance:
   m_ObjectHideFlags: 0
