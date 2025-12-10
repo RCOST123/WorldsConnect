@@ -71,7 +71,9 @@ public class PlayerController : MonoBehaviour
     // Ground detection
     private bool isGrounded;
     private float lastYVelocity;
-    private int groundContactCount = 0; // Fix for ghost floor bug
+    private int groundContactCount = 0;
+    
+    private float lastLandTime; 
 
     // Wall detection
     private bool isTouchingWall;
@@ -102,14 +104,15 @@ public class PlayerController : MonoBehaviour
         initialGravityScale = rb.gravityScale;
         currentHearts = maxHearts;
         keysCollected = 0;
-        jumpSound = GameObject.Find("Jump_Sound").GetComponent<AudioSource>();
-        //doublejumpSound = GameObject.Find("DoubleJump_Sound").GetComponent<AudioSource>();
-        heartlossSound = GameObject.Find("Life_Loss").GetComponent<AudioSource>();
-        keySound = GameObject.Find("Key_Sound").GetComponent<AudioSource>();
-        deathSound = GameObject.Find("Death_Sound").GetComponent<AudioSource>();
-        walljumpsound = GameObject.Find("WallJump_Sound").GetComponent<AudioSource>();
-        birdSound = GameObject.Find("Bird_Noise").GetComponent<AudioSource>();
-        batSound = GameObject.Find("Bat_Sound").GetComponent<AudioSource>();
+        
+        // Safety check to prevent errors if sounds aren't found
+        if(GameObject.Find("Jump_Sound")) jumpSound = GameObject.Find("Jump_Sound").GetComponent<AudioSource>();
+        if(GameObject.Find("Life_Loss")) heartlossSound = GameObject.Find("Life_Loss").GetComponent<AudioSource>();
+        if(GameObject.Find("Key_Sound")) keySound = GameObject.Find("Key_Sound").GetComponent<AudioSource>();
+        if(GameObject.Find("Death_Sound")) deathSound = GameObject.Find("Death_Sound").GetComponent<AudioSource>();
+        if(GameObject.Find("WallJump_Sound")) walljumpsound = GameObject.Find("WallJump_Sound").GetComponent<AudioSource>();
+        if(GameObject.Find("Bird_Noise")) birdSound = GameObject.Find("Bird_Noise").GetComponent<AudioSource>();
+        if(GameObject.Find("Bat_Sound")) batSound = GameObject.Find("Bat_Sound").GetComponent<AudioSource>();
     }
 
     void Update()
@@ -161,13 +164,11 @@ public class PlayerController : MonoBehaviour
         if (!isWallGrabbing)
             rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
 
-        if (Input.GetKeyDown(KeyCode.Joystick1Button0)||Input.GetButtonDown("Jump"))//Fixed, jump works on controller and keyboard
+        if (Input.GetKeyDown(KeyCode.Joystick1Button0)||Input.GetButtonDown("Jump"))
         {
             if (isGrounded)
             {
                 Jump();
-                //jumpSound.Play();
-               // AudioSource.PlayClipAtPoint(woodSound, transform.position);
             }
             else if ((hasClaws && isTouchingWall) && (isGrounded))
             {
@@ -183,10 +184,6 @@ public class PlayerController : MonoBehaviour
             else if (hasExtraJump && extraJumpAvailable)
             {
                 Jump();
-                //jumpSound.Play();
-               // AudioSource.PlayClipAtPoint(wingSound, transform.position);
-                //doublejumpSound.Play();
-                //jumpSound.Play();
                 extraJumpAvailable = false;
             }
         }
@@ -234,8 +231,7 @@ public class PlayerController : MonoBehaviour
         {
             keysCollected++;
             Debug.Log("Key collected! Total keys: " + keysCollected);
-            //AudioSource.PlayClipAtPoint(keySound, transform.position);
-            keySound.Play();
+            if(keySound) keySound.Play();
             Destroy(other.gameObject);
             AddKey();
         }
@@ -255,15 +251,14 @@ public class PlayerController : MonoBehaviour
     {
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         isGrounded = false;
-        jumpSound.Play();
-        // Don't reset groundContactCount here; OnCollisionExit handles it
+        if(jumpSound) jumpSound.Play();
     }
 
     private void WallJump()
     {
         float pushDirection = -wallDirection;
         rb.linearVelocity = new Vector2(pushDirection * wallJumpHorizontalPush, jumpForce);
-        walljumpsound.Play();
+        if(walljumpsound) walljumpsound.Play();
         isWallGrabbing = false;
         isTouchingWall = false;
         rb.gravityScale = initialGravityScale;
@@ -324,22 +319,31 @@ public class PlayerController : MonoBehaviour
             extraJumpAvailable = true;
             rb.gravityScale = initialGravityScale;
 
-            foreach (var contact in collision.contacts)
+            if (Time.time - lastLandTime > 0.1f)
             {
-                if (contact.normal.y > 0.5f)
+                foreach (var contact in collision.contacts)
                 {
-                    float impactSpeed = Mathf.Abs(lastYVelocity);
-                    if (impactSpeed > fallDamageThreshold)
-                        TakeDamage(1);
-                        rb.linearVelocity = Vector2.zero;
-                        impactSpeed = 0;
-
-                    if (collision.gameObject.CompareTag("Platform"))
+                    if (contact.normal.y > 0.5f)
                     {
-                        lastPlatformPosition = transform.position;
-                        hasValidRespawnPoint = true;
-                        rb.linearVelocity = Vector2.zero;
-                        impactSpeed = 0;
+                        lastLandTime = Time.time;
+
+                        float impactSpeed = Mathf.Abs(lastYVelocity);
+                        
+                        if (impactSpeed > fallDamageThreshold)
+                        {
+                            TakeDamage(1);
+                            rb.linearVelocity = Vector2.zero;
+                            impactSpeed = 0;
+                        }
+
+                        if (collision.gameObject.CompareTag("Platform"))
+                        {
+                            lastPlatformPosition = transform.position;
+                            hasValidRespawnPoint = true;
+                            // rb.linearVelocity = Vector2.zero; 
+                        }
+
+                        break; 
                     }
                 }
             }
@@ -349,26 +353,14 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("BirdEnemy"))
         {
             TakeDamage(1);
-            birdSound.Play();
+            if(birdSound) birdSound.Play();
         }
 
         if (collision.gameObject.CompareTag("BatEnemy"))
         {
             TakeDamage(1);
-            batSound.Play();
+            if(batSound) batSound.Play();
         }
-        
-        
-       //if (collision.gameObject.CompareTag("NearBirdEnemy"))
-        //{
-        //    birdSound.Play();
-        //}
-        
-        
-        //if (collision.gameObject.CompareTag("NearBatEnemy"))
-        //{
-           // batSound.Play();
-        //}
 
         // Wall Collision
         if (collision.gameObject.CompareTag("Wall"))
@@ -393,7 +385,6 @@ public class PlayerController : MonoBehaviour
         {
             groundContactCount--;
             
-            // Only unground if touching 0 floors
             if (groundContactCount <= 0)
             {
                 isGrounded = false;
@@ -412,8 +403,7 @@ public class PlayerController : MonoBehaviour
     {
         currentHearts -= amount;
         currentHearts = Mathf.Max(currentHearts, 0);
-        heartlossSound.Play();
-        //AudioSource.PlayClipAtPoint(heartSound, transform.position);
+        if(heartlossSound) heartlossSound.Play();
 
         if (currentHearts <= 0)
         {
@@ -434,7 +424,7 @@ public class PlayerController : MonoBehaviour
             rb.linearVelocity = Vector2.zero;
             
             isGrounded = false;
-            groundContactCount = 0; // Reset counter on respawn
+            groundContactCount = 0; 
             
             isTouchingWall = false;
             isWallGrabbing = false;
@@ -447,8 +437,7 @@ public class PlayerController : MonoBehaviour
     void Die()
     {
         Debug.Log("Game Over!");
-        //AudioSource.PlayClipAtPoint(deathsound, transform.position);
-        deathSound.Play();
+        if(deathSound) deathSound.Play();
         Time.timeScale = 1f;
         Destroy(gameObject);
         Time.timeScale = 1f;
