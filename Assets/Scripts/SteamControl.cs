@@ -6,7 +6,7 @@ public class SteamControl : MonoBehaviour
     public GameObject steambottomtrigger;
     public GameObject steammiddletrigger;
     public GameObject steamtoptrigger;
-    public AudioClip windSound;
+    public AudioSource windSound;
     public int minkey = 1;
     public int i = 1;
     
@@ -16,6 +16,7 @@ public class SteamControl : MonoBehaviour
         steambottomtrigger.SetActive(false);
         steammiddletrigger.SetActive(false);
         steamtoptrigger.SetActive(false);
+        windSound = GameObject.Find("Wind_Sound").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -29,7 +30,8 @@ public class SteamControl : MonoBehaviour
             steamtoptrigger.SetActive(true);
             if (i == 1)
             {
-                AudioSource.PlayClipAtPoint(windSound, transform.position);
+                windSound.Play();
+                //AudioSource.PlayClipAtPoint(windSound, transform.position);
                 i = i - 1;
             }
         }
