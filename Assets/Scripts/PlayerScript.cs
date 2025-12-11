@@ -136,13 +136,24 @@ public class PlayerController : MonoBehaviour
                 return;
         }
 
-        if (hasWaterBalloon && Input.GetKeyDown(KeyCode.E))
+        if (hasWaterBalloon && (Input.GetKeyDown(KeyCode.E)||Input.GetKeyDown(KeyCode.Joystick1Button1)))
             ThrowWaterBalloon();
 
         float moveInput = Input.GetAxisRaw("Horizontal");
 
         if (moveInput != 0f)
             facingDirection = Mathf.Sign(moveInput);
+
+        //assisted with cgpt------
+        if (moveInput != 0f){
+            if ((moveInput > 0f && transform.localScale.x > 0) ||
+                (moveInput < 0f && transform.localScale.x < 0))
+            {
+                Flip();
+            }
+        }
+        //------------------------
+
 
         if (isTouchingWall)
         {
@@ -289,7 +300,7 @@ public class PlayerController : MonoBehaviour
         GameObject balloon = Instantiate(waterBalloonPrefab, spawnPos, Quaternion.identity);
         Rigidbody2D rbBalloon = balloon.GetComponent<Rigidbody2D>();
         if (rbBalloon != null)
-            rbBalloon.linearVelocity = new Vector2(0, -10f);
+            rbBalloon.linearVelocity = new Vector2(10, -10f);//forward and slightly down
         Debug.Log("Water balloon thrown!");
     }
 
@@ -450,4 +461,13 @@ public class PlayerController : MonoBehaviour
         currentHearts -= amount;
         currentHearts = Mathf.Max(currentHearts, 0);
     }
+    
+    void Flip()
+    {
+        // Reverse the player's X scale to face the other direction
+        Vector3 scale = transform.localScale;
+        scale.x *= -1;
+        transform.localScale = scale;
+    }
+    
 }
